@@ -1,6 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Infastructure;
+using Services.Input;
 using UnityEngine;
 
 public class HeroMovement : MonoBehaviour
@@ -11,7 +10,13 @@ public class HeroMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     private Rigidbody2D rb;
+    private IInputService _inputService;
     private const float groundRadius = 0.2f;
+
+    private void Awake()
+    {
+        _inputService = Game.InputService;
+    }
 
     void Start()
     {
@@ -20,17 +25,16 @@ public class HeroMovement : MonoBehaviour
 
     private void Update()
     {
-        if (isGrounded && Input.GetKeyDown(KeyCode.W))
+        if (isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);          
+            rb.velocity =new Vector2(rb.velocity.x,_inputService.Jump(jumpForce) == 0f ? rb.velocity.y : _inputService.Jump(jumpForce));          
         }
     }
 
     void FixedUpdate()
     {
-        //if(!isGrounded) return;
-        float move = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
+        var moveVector = _inputService.Axis;
+        rb.velocity = new Vector2(moveVector * moveSpeed, rb.velocity.y);
     }
     
     private void OnDrawGizmos()
