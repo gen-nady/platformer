@@ -15,11 +15,12 @@ public class HeroMovement : MonoBehaviour
 
     private void Awake()
     {
-        _inputService = Game.InputService;
+       
     }
 
     void Start()
     {
+         _inputService = Game.InputService;
         rb = GetComponent<Rigidbody2D>();
     }
 
