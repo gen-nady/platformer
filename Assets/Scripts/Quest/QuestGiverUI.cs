@@ -8,8 +8,9 @@ namespace Quest
     public class QuestGiverUI : MonoBehaviour
     {
         [Header("Получение квеста")]
-        [SerializeField] private TextMeshProUGUI _desriptionText;
         [SerializeField] private GameObject _questPanel;
+        [SerializeField] private TextMeshProUGUI _titleText;
+        [SerializeField] private TextMeshProUGUI _desriptionText;
         [SerializeField] private Button _agreeQuestButton;
         [Header("Сдача квеста")]
         [SerializeField] private TextMeshProUGUI _bonusesText;
@@ -18,15 +19,15 @@ namespace Quest
         public void SetQuestText(Quest quest, Action agreeAction)
         {
             _questPanel.SetActive(true);
-            //_desriptionText.text = quest.Discription;
+            _titleText.text = quest.QuestTitle;
+            _desriptionText.text = quest.QuestDescription;
             _agreeQuestButton.onClick.AddListener(() => agreeAction?.Invoke());
         }
         
         public void CompletedQuest(Quest quest, Action agreeAction)
         {
             _bonusesPanel.SetActive(true);
-            // _bonusesText.text = $"Золото х{quest.Gold} \n" +
-            //                     $"Опыт х{quest.Expirience}";
+            _bonusesText.text = quest.ShowBonusesText();
             _agreeBonusesButton.onClick.AddListener(() => agreeAction?.Invoke());
         }
         public void CloseBonusesPanel()

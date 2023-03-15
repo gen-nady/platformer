@@ -21,7 +21,5 @@ namespace Services.Input
         {
             throw new System.NotImplementedException();
         }
-
-       
     }
 }

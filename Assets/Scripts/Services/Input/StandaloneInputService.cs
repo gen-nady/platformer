@@ -20,8 +20,7 @@ namespace Services.Input
         }
 
         public override float Jump(float jump)
-        
-              => UnityEngine.Input.GetKeyDown(KeyCode.Space) ? jump : 0f;
+            => UnityEngine.Input.GetKeyDown(KeyCode.Space) ? jump : 0f;
 
         private float UnityAxis()
             => UnityEngine.Input.GetAxis(Horizontal);

@@ -1,33 +1,33 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using PickUpObject;
 using UnityEngine;
+using Zenject;
 
 namespace Quest
 {
     public class PlayerQuest : MonoBehaviour
     {
-        public static PlayerQuest instance;
-
         private List<Quest> quests = new List<Quest>();
-
-        private void Awake()
+        [Inject] private PlayerQuestUI _playerQuestUI;
+        
+        private void Start()
         {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            QuestGiver.AddQuestToPlayer += AddQuest;
         }
 
-        public void AddQuest(Quest quest)
+        private void OnDestroy()
+        {
+            QuestGiver.AddQuestToPlayer -= AddQuest;
+        }
+        
+        private void AddQuest(Quest quest)
         {
             quests.Add(quest);
         }
 
+        public bool IsThereQuest(Quest quest)
+            => quests.Any(_ => _.Equals(quest));
+        
         private void KillEnemy(string enemyName)
         {
             foreach (var killQuest in quests.OfType<KillQuest>())
@@ -36,7 +36,7 @@ namespace Quest
             }
         }
 
-        private void FindObject(PickUpItem objectFind)
+        private void FindObject(string objectFind)
         {
             foreach (var searchQuest in quests.OfType<SearchQuest>())
             {
@@ -58,7 +58,7 @@ namespace Quest
             CheckQuestsComplete();
         }
 
-        public void ObjectFound(PickUpItem objectFind)
+        public void ObjectFound(string objectFind)
         {
             FindObject(objectFind);
             CheckQuestsComplete();
@@ -74,7 +74,7 @@ namespace Quest
         {
             foreach (var quest in quests.Where(quest => quest.IsCompleted))
             {
-                // Выдаем награду
+                _playerQuestUI.ChangeProgress(quest);
             }
         }
     }

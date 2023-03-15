@@ -6,14 +6,19 @@ namespace Quest
     [CreateAssetMenu(fileName = "New Search Quest", menuName = "Quest System/Search Quest")]
     public class SearchQuest : Quest
     {
-        public PickUpItem typeToFind;
-
-        public void ObjectFound(PickUpItem objectFind)
+        [SerializeField] private string _objectToFind;
+        [SerializeField] private string _objectName;
+        public void ObjectFound(string findObjectName)
         {
-            if (!isComplete && objectFind is PickUpItem)
+            if (!_isComplete && findObjectName == _objectToFind)
             {
-                isComplete = true;
+                _isComplete = true;
             }
+        }
+        
+        public override string CurrentTextProgress()
+        {
+            return _isComplete ?  $"Предмет {_objectName} найден!" : $"Найдите {_objectName}";
         }
     }
 }

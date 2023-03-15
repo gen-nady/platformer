@@ -9,10 +9,15 @@ namespace Quest
 
         public void NpcTalked(string npcName)
         {
-            if (!isComplete && npcName == npcToTalk)
+            if (!_isComplete && npcName == npcToTalk)
             {
-                isComplete = true;
+                _isComplete = true;
             }
+        }
+        
+        public override string CurrentTextProgress()
+        {
+            return _isComplete ?  $"Вы получили мудрую информацию от {npcToTalk}!" : $"Поговорите с  {npcToTalk}!";
         }
     }
 }

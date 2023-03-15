@@ -20,9 +20,7 @@ namespace Services.Input
         }
 
         public override float Jump(float jump)
-        {
-            throw new System.NotImplementedException();
-        }
+            =>  jump;
 
         private float UnityAxis()
             => UnityEngine.Input.GetAxis(Horizontal);

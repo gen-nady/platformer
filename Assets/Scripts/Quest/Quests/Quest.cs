@@ -3,12 +3,22 @@
 namespace Quest
 {
     [CreateAssetMenu(fileName = "New Quest", menuName = "Quest System/Quest")]
-    public class Quest : ScriptableObject
+    public abstract class Quest : ScriptableObject
     {
-        protected string questTitle;
-        protected string questDescription;
-        protected int questTarget;
-        protected bool isComplete;
-        public bool IsCompleted => isComplete;
+        [SerializeField] private string _questTitle;
+        [SerializeField] private string _questDescription;
+        [SerializeField] protected int _questTarget;
+        [SerializeField] private int _gold;
+        [SerializeField] private int _expirience;
+        protected bool _isComplete;
+        public bool IsCompleted => _isComplete;
+        public string QuestTitle => _questTitle;
+        public string QuestDescription => _questDescription;
+        public abstract string CurrentTextProgress();
+
+        public string ShowBonusesText()
+        {
+           return $"Золото х{_gold} \n Опыт х{_expirience}";
+        }
     }
 }

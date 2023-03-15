@@ -5,20 +5,25 @@ namespace Quest
     [CreateAssetMenu(fileName = "New Kill Quest", menuName = "Quest System/Kill Quest")]
     public class KillQuest : Quest
     {
-        public string enemyName;
-        public int enemiesToKill;
+        [SerializeField] private string _enemyName;
+        [SerializeField] private int _enemiesToKill;
 
         public void EnemyKilled(string enemyName)
         {
-            if (!isComplete && enemyName == this.enemyName)
+            if (!_isComplete && enemyName == this._enemyName)
             {
-                questTarget--;
+                _enemiesToKill++;
 
-                if (questTarget <= 0)
+                if (_enemiesToKill == _questTarget)
                 {
-                    isComplete = true;
+                    _isComplete = true;
                 }
             }
+        }
+
+        public override string CurrentTextProgress()
+        {
+            return $"Убито {_enemiesToKill} из {_questTarget}";
         }
     }
 }
