@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e92d2cb05fd748d8ac51823c34f03f89, type: 3}
-  m_Name: New Quest
+  m_Name: Amulet
   m_EditorClassIdentifier: 
-  _questTitle: 1111
-  _questDescription: 22222
+  _id: id1
+  _questTitle: "\u041D\u0430\u0439\u0442\u0438 \u0430\u043C\u0443\u043B\u0435\u0442"
+  _questDescription: "\u041E\u043D \u043E\u0447\u0435\u043D\u044C \u0432\u0435\u043B\u0438\u043A\u0438\u0439"
   _questTarget: 1
-  _gold: 0
-  _expirience: 0
-  _objectToFind: id1
-  _objectName: AMULET
+  _gold: 100
+  _expirience: 100
+  _isComplete: 0
+  _objectName: "\u0410\u043C\u0443\u043B\u0435\u0442"
+  _currentTarget: 0

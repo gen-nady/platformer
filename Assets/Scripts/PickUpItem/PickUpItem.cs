@@ -8,7 +8,7 @@ namespace PickUpObject
     public abstract class PickUpItem : MonoBehaviour
     {
         [SerializeField] protected string _idName;
-        [Inject] public PlayerQuest _playerQuest;
+        [Inject] protected PlayerQuest _playerQuest;
 
         public abstract void PickUp();
     }

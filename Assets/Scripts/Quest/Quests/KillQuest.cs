@@ -6,15 +6,15 @@ namespace Quest
     public class KillQuest : Quest
     {
         [SerializeField] private string _enemyName;
-        [SerializeField] private int _enemiesToKill;
+        [SerializeField] private int _currentTarget;
 
         public void EnemyKilled(string enemyName)
         {
-            if (!_isComplete && enemyName == this._enemyName)
+            if (!_isComplete && enemyName == _enemyName)
             {
-                _enemiesToKill++;
+                _currentTarget++;
 
-                if (_enemiesToKill == _questTarget)
+                if (_currentTarget == _questTarget)
                 {
                     _isComplete = true;
                 }
@@ -23,7 +23,7 @@ namespace Quest
 
         public override string CurrentTextProgress()
         {
-            return $"Убито {_enemiesToKill} из {_questTarget}";
+            return $"Убито {_currentTarget} из {_questTarget}";
         }
     }
 }

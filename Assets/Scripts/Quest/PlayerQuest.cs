@@ -10,7 +10,7 @@ namespace Quest
         private List<Quest> quests = new List<Quest>();
         [Inject] private PlayerQuestUI _playerQuestUI;
         
-        private void Start()
+        private void OnEnable()
         {
             QuestGiver.AddQuestToPlayer += AddQuest;
         }
@@ -72,7 +72,7 @@ namespace Quest
 
         private void CheckQuestsComplete()
         {
-            foreach (var quest in quests.Where(quest => quest.IsCompleted))
+            foreach (var quest in quests)
             {
                 _playerQuestUI.ChangeProgress(quest);
             }
