@@ -44,7 +44,6 @@ namespace Quest
             {
                 Destroy(curQuest.gameObject);
                 _playerQuest.Remove(curQuest);
-               
             }
         }
     }

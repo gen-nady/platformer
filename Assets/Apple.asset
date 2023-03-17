@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92d2cb05fd748d8ac51823c34f03f89, type: 3}
   m_Name: Apple
   m_EditorClassIdentifier: 
-  _id: id2
+  _id: 93e38830-c161-47be-9cb0-ce147299b092
   _questTitle: "\u041D\u0430\u0439\u0442\u0438 2 \u044F\u0431\u043B\u043E\u043A\u0430"
   _questDescription: "\u041E\u043D\u0438 \u0432\u043E\u043B\u0448\u0435\u0431\u043D\u044B\u0435"
   _questTarget: 2
   _gold: 75
   _expirience: 75
   _isComplete: 0
+  _prevIdQuest: []
   _objectName: "\u042F\u0431\u043B\u043E\u043A\u0430"
   _currentTarget: 0

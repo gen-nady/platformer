@@ -9,7 +9,7 @@ namespace Quest
         [SerializeField] private string _objectName;
         [SerializeField] private int _currentTarget;
 
-        private void Awake()
+        private void OnEnable()
         {
             Reset();
         }
@@ -31,7 +31,7 @@ namespace Quest
             return _isComplete ?  $"Предметы {_objectName} найдены!" : $"Найдено {_objectName} {_currentTarget} из {_questTarget}";
         }
 
-        public void Reset()
+        public override void Reset()
         {
             _currentTarget = 0;
             _isComplete = false;

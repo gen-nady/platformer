@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 using Zenject;
@@ -13,10 +14,10 @@ namespace Quest
         [SerializeField] private List<Quest> _quests;
         private bool _isActiveQuest;
         private bool _isAllQuest;
+        private bool _isCurrentActive;
         [Inject] private QuestGiverUI _questGiverUI;
         [Inject] private PlayerQuest _playerQuest;
-        //private readonly int _walk = Animator.StringToHash("Walk");
- 
+        
         private void AddQusetToPlayer()
         {
             AddQuestToPlayer?.Invoke(_quests[0]);
@@ -26,11 +27,20 @@ namespace Quest
         private void GetBonusesForQuest()
         {
             QuestCompleted?.Invoke(_quests[0]);
-            _quests.RemoveAt(0);
+            CheckForActiveQuest(_quests[0]);
+        }
+
+        private void CheckForActiveQuest(Quest quest)
+        {
+            _quests.Remove(quest);
             if (_quests.Count > 0)
             {
-                _questGiverUI.SetQuestText(_quests[0], AddQusetToPlayer);
-                _isActiveQuest = false;
+                if (_playerQuest.CheckForQuest(_quests[0].PrevIdQuest))
+                {
+                    _questGiverUI.SetQuestText(_quests[0], AddQusetToPlayer);
+                    _isActiveQuest = false;
+                    return;
+                }
                 return;
             }
             _isAllQuest = true;
@@ -41,6 +51,7 @@ namespace Quest
             if(_isAllQuest) return;
             if (other.GetComponent<MainPlayerMovement>())
             {
+                _isCurrentActive = true;
                 if (_isActiveQuest)
                 {
                     if (_playerQuest.IsThereQuest(_quests[0]))
@@ -48,13 +59,29 @@ namespace Quest
                         if (_quests[0].IsCompleted)
                         {
                             _questGiverUI.CompletedQuest(_quests[0],GetBonusesForQuest);
+                           
                         }
                     }
                 }
                 else
                 {
-                    _questGiverUI.SetQuestText(_quests[0], AddQusetToPlayer);
+                    if (_quests.Count > 0)
+                    {
+                        
+                        if (_playerQuest.CheckForQuest(_quests[0].PrevIdQuest))
+                        {
+                            _questGiverUI.SetQuestText(_quests[0], AddQusetToPlayer);
+                        }
+                    }
                 }
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.GetComponent<MainPlayerMovement>())
+            {
+                _isCurrentActive = false;
             }
         }
     }

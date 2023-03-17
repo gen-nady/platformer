@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e92d2cb05fd748d8ac51823c34f03f89, type: 3}
-  m_Name: Amulet
+  m_Name: Amulet 1
   m_EditorClassIdentifier: 
-  _id: af51c8d8-f607-4db2-ac11-0e44c3457d92
+  _id: a458e8f9-aa00-41d7-b760-95ab33c07d8d
   _questTitle: "\u041D\u0430\u0439\u0442\u0438 \u0430\u043C\u0443\u043B\u0435\u0442"
   _questDescription: "\u041E\u043D \u043E\u0447\u0435\u043D\u044C \u0432\u0435\u043B\u0438\u043A\u0438\u0439"
   _questTarget: 1
   _gold: 100
   _expirience: 100
   _isComplete: 0
-  _prevIdQuest: []
+  _prevIdQuest:
+  - af51c8d8-f607-4db2-ac11-0e44c3457d92
+  - 93e38830-c161-47be-9cb0-ce147299b092
   _objectName: "\u0410\u043C\u0443\u043B\u0435\u0442"
   _currentTarget: 0

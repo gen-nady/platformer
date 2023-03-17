@@ -19,5 +19,10 @@ namespace Quest
         {
             return _isComplete ?  $"Вы получили мудрую информацию от {npcToTalk}!" : $"Поговорите с  {npcToTalk}!";
         }
+        
+        public override void Reset()
+        {
+            _isComplete = false;
+        }
     }
 }

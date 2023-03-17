@@ -25,5 +25,11 @@ namespace Quest
         {
             return $"Убито {_currentTarget} из {_questTarget}";
         }
+        
+        public override void Reset()
+        {
+            _currentTarget = 0;
+            _isComplete = false;
+        }
     }
 }
