@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Quest
 {
-    [CreateAssetMenu(fileName = "New Quest", menuName = "Quest System/Quest")]
     public abstract class Quest : ScriptableObject
     {
         [SerializeField] private string _id;

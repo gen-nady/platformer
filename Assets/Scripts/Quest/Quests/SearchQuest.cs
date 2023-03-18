@@ -14,6 +14,11 @@ namespace Quest
             Reset();
         }
 
+        private void OnDisable()
+        {
+            Reset();
+        }
+        
         public void ObjectFound(string findObjectName)
         {
             if (!_isComplete && findObjectName == Id)
