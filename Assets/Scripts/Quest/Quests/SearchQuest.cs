@@ -17,12 +17,6 @@ namespace Quest
         {
             Reset();
         }
-        
-        public override void Reset()
-        {
-            _currentCount = 0;
-            _isComplete = false;
-        }
         #endregion
         
         public void ObjectFound(string findObjectName)
@@ -40,6 +34,12 @@ namespace Quest
         public override string CurrentTextProgress()
         {
             return _isComplete ?  $"Предметы {_nameTarget} найдены!" : $"Найдено {_nameTarget} {_currentCount} из {_targetCount}";
+        }
+        
+        public override void Reset()
+        {
+            _currentCount = 0;
+            _isComplete = false;
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace PickUpObject
+﻿namespace ObjectToQuest
 {
-    public class BananaPickUpItem : PickUpItem
+    public class AmuletPickUpItem : PickUpItem
     {
         public override void PickUp()
         {

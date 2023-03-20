@@ -1,9 +1,8 @@
-﻿using System;
-using Quest;
+﻿using Quest;
 using UnityEngine;
 using Zenject;
 
-namespace PickUpObject
+namespace ObjectToQuest
 {
     public abstract class PickUpItem : MonoBehaviour
     {

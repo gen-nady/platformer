@@ -5,11 +5,22 @@ namespace Quest
     [CreateAssetMenu(fileName = "New Talk Quest", menuName = "Quest System/Talk Quest")]
     public class TalkQuest : Quest
     {
-        public string npcToTalk;
-
-        public void NpcTalked(string npcName)
+        [SerializeField] private string npcText;
+        #region MONO
+        private void OnEnable()
         {
-            if (!_isComplete && npcName == npcToTalk)
+            Reset();
+        }
+
+        private void OnDisable()
+        {
+            Reset();
+        }
+        #endregion
+        
+        public void NpcTalked(string npcId)
+        {
+            if (!_isComplete && npcId == Id)
             {
                 _isComplete = true;
             }
@@ -17,12 +28,13 @@ namespace Quest
         
         public override string CurrentTextProgress()
         {
-            return _isComplete ?  $"Вы получили мудрую информацию от {npcToTalk}!" : $"Поговорите с  {npcToTalk}!";
+            return _isComplete ?  $"Вы получили мудрую информацию от {_nameTarget}!" : $"Поговорите с  {_nameTarget}!";
         }
         
         public override void Reset()
         {
             _isComplete = false;
+            _targetCount = 0;
         }
     }
 }

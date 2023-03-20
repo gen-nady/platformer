@@ -10,6 +10,7 @@ namespace Quest
         public static event Action<Quest> AddQuestToPlayer;
         public static event Action<Quest> QuestCompleted;
         [SerializeField] private List<Quest> _quests;
+        [SerializeField] private GameObject _activeQuestPanel;
         private bool _isActiveQuest;
         private bool _isAllQuest;
         [Inject] private QuestGiverUI _questGiverUI;
@@ -18,12 +19,14 @@ namespace Quest
         private void AddQusetToPlayer()
         {
             AddQuestToPlayer?.Invoke(_quests[0]);
+            _activeQuestPanel.SetActive(true);
             _isActiveQuest = true;
         }
         
         private void GetBonusesForQuest()
         {
             QuestCompleted?.Invoke(_quests[0]);
+            _activeQuestPanel.SetActive(false);
             CheckForActiveQuest(_quests[0]);
         }
 

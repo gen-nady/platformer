@@ -18,7 +18,5 @@ MonoBehaviour:
   _gold: 100
   _expirience: 100
   _prevIdQuest: []
-  _nameTarget: 
-  _targetCount: 0
-  _currentCount: 0
-  _name: "\u0430\u043C\u0443\u043B\u0435\u0442"
+  _nameTarget: "\u0430\u043C\u0443\u043B\u0435\u0442"
+  _targetCount: 1

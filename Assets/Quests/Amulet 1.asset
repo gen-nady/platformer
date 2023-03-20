@@ -13,14 +13,13 @@ MonoBehaviour:
   m_Name: Amulet 1
   m_EditorClassIdentifier: 
   _id: a458e8f9-aa00-41d7-b760-95ab33c07d8d
-  _questTitle: "\u041D\u0430\u0439\u0442\u0438 \u0430\u043C\u0443\u043B\u0435\u0442"
-  _questDescription: "\u041E\u043D \u043E\u0447\u0435\u043D\u044C \u0432\u0435\u043B\u0438\u043A\u0438\u0439"
-  _questTarget: 1
+  _title: "\u041D\u0430\u0439\u0442\u0438 \u0431\u043E\u043B\u0435\u0435 \u0432\u0435\u043B\u0438\u043A\u0438\u0439
+    \u0430\u043C\u0443\u043B\u0435\u0442"
+  _discription: "\u041E\u043D \u0435\u0449\u0435 \u0431\u043E\u043B\u0435\u0435 \u043A\u0440\u0443\u0442\u043E\u0439"
   _gold: 100
   _expirience: 100
-  _isComplete: 0
   _prevIdQuest:
   - af51c8d8-f607-4db2-ac11-0e44c3457d92
   - 93e38830-c161-47be-9cb0-ce147299b092
-  _objectName: "\u0410\u043C\u0443\u043B\u0435\u0442"
-  _currentTarget: 0
+  _nameTarget: "\u0410\u043C\u0443\u043B\u0435\u0442"
+  _targetCount: 1
