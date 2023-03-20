@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Services.Input
+﻿namespace Services.Input
 {
     public class MobileInputService : InputService
     {
@@ -18,10 +16,7 @@ namespace Services.Input
                 return axis;
             }
         }
-
-        public override float Jump(float jump)
-            =>  jump;
-
+        
         private float UnityAxis()
             => UnityEngine.Input.GetAxis(Horizontal);
     }

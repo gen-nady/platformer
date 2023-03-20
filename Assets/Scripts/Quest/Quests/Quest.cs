@@ -1,27 +1,30 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Quest
 {
     public abstract class Quest : ScriptableObject
     {
         [SerializeField] private string _id;
-        [SerializeField] private string _questTitle;
-        [SerializeField] private string _questDescription;
-        [SerializeField] protected int _questTarget;
+        [SerializeField] private string _title;
+        [SerializeField] private string _discription;
         [SerializeField] private int _gold;
         [SerializeField] private int _expirience;
-        [SerializeField] protected bool _isComplete;
         [SerializeField] private List<string> _prevIdQuest = new List<string>();
+        [SerializeField] protected string _nameTarget;
+        [SerializeField] protected int _targetCount;
+        protected bool _isComplete;
         public List<string> PrevIdQuest => _prevIdQuest;
         public bool IsCompleted => _isComplete;
         public string Id => _id;
-        public string QuestTitle => _questTitle;
-        public string QuestDescription => _questDescription;
+        public string Title => _title;
+        public string Discription => _discription;
         
-        public abstract string CurrentTextProgress();
         public abstract void Reset();
 
+        public abstract string CurrentTextProgress();
+        
         private void OnValidate()
         {
             if (Application.isPlaying)

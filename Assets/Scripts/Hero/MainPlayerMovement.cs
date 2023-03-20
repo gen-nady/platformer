@@ -22,7 +22,8 @@ public class MainPlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        Jump();
+        if(Input.GetKey(KeyCode.Space))
+            Jump();
     }
 
     private void FixedUpdate()
@@ -43,11 +44,11 @@ public class MainPlayerMovement : MonoBehaviour
         _rb.velocity = new Vector2(moveVector * _moveSpeed, _rb.velocity.y);
     }
     
-    private void Jump()
+    public void Jump()
     {
         if (isGrounded)
         {
-            _rb.velocity =new Vector2(_rb.velocity.x,_inputService.Jump(_jumpForce) == 0f ? _rb.velocity.y : _inputService.Jump(_jumpForce));
+            _rb.velocity =new Vector2(_rb.velocity.x,_jumpForce);
         }
     }
     

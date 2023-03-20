@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace PickUpObject
+﻿namespace PickUpObject
 {
     public class AmuletPickUpItem : PickUpItem
     {

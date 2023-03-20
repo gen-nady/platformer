@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Amulet
   m_EditorClassIdentifier: 
   _id: af51c8d8-f607-4db2-ac11-0e44c3457d92
-  _questTitle: "\u041D\u0430\u0439\u0442\u0438 \u0430\u043C\u0443\u043B\u0435\u0442"
-  _questDescription: "\u041E\u043D \u043E\u0447\u0435\u043D\u044C \u0432\u0435\u043B\u0438\u043A\u0438\u0439"
-  _questTarget: 1
+  _title: "\u043D\u0430\u0439\u0434\u0438 \u0430\u043C\u0443\u043B\u0435\u0442"
+  _discription: "\u041E\u043D \u043E\u0447 \u0432\u0435\u043B\u0438\u043A\u0438\u0439"
   _gold: 100
   _expirience: 100
-  _isComplete: 0
   _prevIdQuest: []
-  _objectName: "\u0410\u043C\u0443\u043B\u0435\u0442"
-  _currentTarget: 0
+  _nameTarget: 
+  _targetCount: 0
+  _currentCount: 0
+  _name: "\u0430\u043C\u0443\u043B\u0435\u0442"

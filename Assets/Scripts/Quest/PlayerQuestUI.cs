@@ -22,14 +22,10 @@ namespace Quest
             QuestGiver.AddQuestToPlayer -= SetInfoOrQuest;
             QuestGiver.QuestCompleted -= ResetQuest;
         }
+        
         public void ChangeProgress(Quest quest)
         {
-            var curQuest = _playerQuest.FirstOrDefault(_ => _.IdQuest == quest.Id);
-            if (curQuest != null)
-            {
-                curQuest.SetValue(quest);
-                
-            }
+             _playerQuest.FirstOrDefault(_ => _.IdQuest == quest.Id)!.ChangeProgress(quest);;
         }
         private void SetInfoOrQuest(Quest quest)
         {
@@ -39,12 +35,9 @@ namespace Quest
         }
         private void ResetQuest(Quest quest)
         {
-            var curQuest = _playerQuest.FirstOrDefault(_ => _.IdQuest == quest.Id);
-            if (curQuest != null)
-            {
-                Destroy(curQuest.gameObject);
-                _playerQuest.Remove(curQuest);
-            }
+            var curQuest = _playerQuest.FirstOrDefault(_ => _.IdQuest == quest.Id)!;
+            Destroy(curQuest.gameObject);
+            _playerQuest.Remove(curQuest);
         }
     }
 }

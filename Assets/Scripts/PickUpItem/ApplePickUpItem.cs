@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using Zenject;
-
-namespace PickUpObject
+﻿namespace PickUpObject
 {
     public class ApplePickUpItem : PickUpItem
     {

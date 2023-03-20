@@ -5,16 +5,15 @@ namespace Quest
     [CreateAssetMenu(fileName = "New Kill Quest", menuName = "Quest System/Kill Quest")]
     public class KillQuest : Quest
     {
-        [SerializeField] private string _enemyName;
-        [SerializeField] private int _currentTarget;
-
+        [SerializeField] private int _currentCount;
+        
         public void EnemyKilled(string enemyName)
         {
-            if (!_isComplete && enemyName == _enemyName)
+            if (!_isComplete && enemyName == _nameTarget)
             {
-                _currentTarget++;
+                _currentCount++;
 
-                if (_currentTarget == _questTarget)
+                if (_currentCount == _targetCount)
                 {
                     _isComplete = true;
                 }
@@ -23,12 +22,12 @@ namespace Quest
 
         public override string CurrentTextProgress()
         {
-            return $"Убито {_currentTarget} из {_questTarget}";
+            return $"Убито {_currentCount} из {_targetCount}";
         }
         
         public override void Reset()
         {
-            _currentTarget = 0;
+            _currentCount = 0;
             _isComplete = false;
         }
     }

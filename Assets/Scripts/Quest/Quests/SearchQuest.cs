@@ -1,14 +1,13 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Quest
 {
     [CreateAssetMenu(fileName = "New Search Quest", menuName = "Quest System/Search Quest")]
     public class SearchQuest : Quest
     {
-        [SerializeField] private string _objectName;
-        [SerializeField] private int _currentTarget;
+        private int _currentCount;
 
+        #region MONO
         private void OnEnable()
         {
             Reset();
@@ -19,12 +18,19 @@ namespace Quest
             Reset();
         }
         
+        public override void Reset()
+        {
+            _currentCount = 0;
+            _isComplete = false;
+        }
+        #endregion
+        
         public void ObjectFound(string findObjectName)
         {
             if (!_isComplete && findObjectName == Id)
             {
-                _currentTarget++;
-                if (_currentTarget == _questTarget)
+                _currentCount++;
+                if (_currentCount == _targetCount)
                 {
                     _isComplete = true;
                 }
@@ -33,13 +39,7 @@ namespace Quest
         
         public override string CurrentTextProgress()
         {
-            return _isComplete ?  $"Предметы {_objectName} найдены!" : $"Найдено {_objectName} {_currentTarget} из {_questTarget}";
-        }
-
-        public override void Reset()
-        {
-            _currentTarget = 0;
-            _isComplete = false;
+            return _isComplete ?  $"Предметы {_nameTarget} найдены!" : $"Найдено {_nameTarget} {_currentCount} из {_targetCount}";
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using DG.Tweening;
 using UnityEngine;
 using Zenject;
 
@@ -14,7 +12,6 @@ namespace Quest
         [SerializeField] private List<Quest> _quests;
         private bool _isActiveQuest;
         private bool _isAllQuest;
-        private bool _isCurrentActive;
         [Inject] private QuestGiverUI _questGiverUI;
         [Inject] private PlayerQuest _playerQuest;
         
@@ -35,7 +32,7 @@ namespace Quest
             _quests.Remove(quest);
             if (_quests.Count > 0)
             {
-                if (_playerQuest.CheckForQuest(_quests[0].PrevIdQuest))
+                if (_playerQuest.IsCompletedQuest(_quests[0].PrevIdQuest))
                 {
                     _questGiverUI.SetQuestText(_quests[0], AddQusetToPlayer);
                     _isActiveQuest = false;
@@ -51,37 +48,14 @@ namespace Quest
             if(_isAllQuest) return;
             if (other.GetComponent<MainPlayerMovement>())
             {
-                _isCurrentActive = true;
-                if (_isActiveQuest)
+                if (_isActiveQuest && _playerQuest.IsQuestExist(_quests[0]) && _quests[0].IsCompleted)
                 {
-                    if (_playerQuest.IsThereQuest(_quests[0]))
-                    {
-                        if (_quests[0].IsCompleted)
-                        {
-                            _questGiverUI.CompletedQuest(_quests[0],GetBonusesForQuest);
-                           
-                        }
-                    }
+                    _questGiverUI.CompletedQuest(_quests[0],GetBonusesForQuest);
                 }
-                else
+                else if (_quests.Count > 0 && _playerQuest.IsCompletedQuest(_quests[0].PrevIdQuest))
                 {
-                    if (_quests.Count > 0)
-                    {
-                        
-                        if (_playerQuest.CheckForQuest(_quests[0].PrevIdQuest))
-                        {
-                            _questGiverUI.SetQuestText(_quests[0], AddQusetToPlayer);
-                        }
-                    }
+                    _questGiverUI.SetQuestText(_quests[0], AddQusetToPlayer);
                 }
-            }
-        }
-
-        private void OnTriggerExit2D(Collider2D other)
-        {
-            if (other.GetComponent<MainPlayerMovement>())
-            {
-                _isCurrentActive = false;
             }
         }
     }

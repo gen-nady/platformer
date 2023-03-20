@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace Services.Input
+﻿namespace Services.Input
 {
     public class StandaloneInputService : InputService
     {
@@ -19,12 +17,7 @@ namespace Services.Input
             }
         }
 
-        public override float Jump(float jump)
-            => UnityEngine.Input.GetKeyDown(KeyCode.Space) ? jump : 0f;
-
         private float UnityAxis()
             => UnityEngine.Input.GetAxis(Horizontal);
-
-
     }
 }

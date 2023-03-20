@@ -16,11 +16,12 @@ namespace Quest
         [SerializeField] private TextMeshProUGUI _bonusesText;
         [SerializeField] private GameObject _bonusesPanel;
         [SerializeField] private Button _agreeBonusesButton;
+       
         public void SetQuestText(Quest quest, Action agreeAction)
         {
             _questPanel.SetActive(true);
-            _titleText.text = quest.QuestTitle;
-            _desriptionText.text = quest.QuestDescription;
+            _titleText.text = quest.Title;
+            _desriptionText.text = quest.Discription;
             _agreeQuestButton.onClick.AddListener(() => agreeAction?.Invoke());
         }
         
@@ -30,11 +31,13 @@ namespace Quest
             _bonusesText.text = quest.ShowBonusesText();
             _agreeBonusesButton.onClick.AddListener(() => agreeAction?.Invoke());
         }
+        
         public void CloseBonusesPanel()
         {
             _agreeBonusesButton.onClick.RemoveAllListeners();
             _bonusesPanel.SetActive(false);
         }
+        
         public void CloseQuestText()
         {
             _agreeQuestButton.onClick.RemoveAllListeners();
