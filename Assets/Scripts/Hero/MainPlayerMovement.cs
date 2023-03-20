@@ -9,15 +9,20 @@ public class MainPlayerMovement : MonoBehaviour
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private LayerMask _groundLayer;
 
+    private Animator _animator;
+    private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rb;
     private IInputService _inputService;
     private const float GroundRadius = 0.2f;
+    private bool _isIdle;
 
     #region MONO
     private void Start()
     {
-         _inputService = Game.InputService;
+        _inputService = Game.InputService;
         _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -42,6 +47,29 @@ public class MainPlayerMovement : MonoBehaviour
     {
         var moveVector = _inputService.Axis;
         _rb.velocity = new Vector2(moveVector * _moveSpeed, _rb.velocity.y);
+        if (moveVector > 0)
+        {
+            _spriteRenderer.flipX = false;
+            _animator.ResetTrigger("Idle");
+            _animator.SetTrigger("Move");
+            _isIdle = false;
+        }
+        else if (moveVector < 0)
+        {
+            _spriteRenderer.flipX = true;
+            _animator.ResetTrigger("Idle");
+            _animator.SetTrigger("Move");
+            _isIdle = false;
+        }
+        else
+        {
+            if (!_isIdle)
+            {
+                _animator.ResetTrigger("Move");
+                _animator.SetTrigger("Idle");
+                _isIdle = true;
+            }
+        }
     }
     
     public void Jump()
