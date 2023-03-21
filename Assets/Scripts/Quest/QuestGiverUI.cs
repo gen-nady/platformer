@@ -38,7 +38,7 @@ namespace Quest
             _bonusesPanel.SetActive(false);
         }
         
-        public void CloseQuestText()
+        public void CloseQuestPanel()
         {
             _agreeQuestButton.onClick.RemoveAllListeners();
             _questPanel.SetActive(false);

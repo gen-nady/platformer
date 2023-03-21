@@ -74,5 +74,14 @@ namespace Quest
                 }
             }
         }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.GetComponent<MainPlayerMovement>())
+            {
+                _questGiverUI.CloseQuestPanel();
+                _questGiverUI.CloseBonusesPanel();
+            }
+        }
     }
 }
