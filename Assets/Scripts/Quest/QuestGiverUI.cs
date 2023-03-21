@@ -16,7 +16,7 @@ namespace Quest
         [SerializeField] private TextMeshProUGUI _bonusesText;
         [SerializeField] private GameObject _bonusesPanel;
         [SerializeField] private Button _agreeBonusesButton;
-       
+        
         public void SetQuestText(Quest quest, Action agreeAction)
         {
             _questPanel.SetActive(true);

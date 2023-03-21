@@ -8,8 +8,7 @@ namespace ObjectToQuest
     {
         [SerializeField] protected string _idName;
         [Inject] protected PlayerQuest _playerQuest;
-        [Inject] protected QuestGiverUI _questGiver;
-        
+
         public abstract void Talk();
     }
 }

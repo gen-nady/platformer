@@ -25,7 +25,7 @@ namespace Quest
         
         public void ChangeProgress(Quest quest)
         {
-             _playerQuest.FirstOrDefault(_ => _.IdQuest == quest.Id)!.ChangeProgress(quest);;
+             _playerQuest.FirstOrDefault(_ => _.IdQuest == quest.Id)!.ChangeProgress(quest);
         }
         private void SetInfoOrQuest(Quest quest)
         {
