@@ -19,5 +19,8 @@ MonoBehaviour:
   _gold: 10
   _expirience: 10
   _prevIdQuest: []
-  _nameTarget: "\u0412\u0435\u043B\u0438\u043A\u0438\u043C \u043C\u0430\u0433\u043E\u043C"
+  _nameTarget: "\u0424\u0415\u0420\u041C\u0415\u0420\u041E\u041C"
   _targetCount: 0
+  _npcText:
+  - "\u0422\u0423\u041F\u041E"
+  - "\u041A\u0420\u0423\u0422\u041E"

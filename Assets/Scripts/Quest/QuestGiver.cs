@@ -15,7 +15,7 @@ namespace Quest
         private bool _isAllQuest;
         [Inject] private QuestGiverUI _questGiverUI;
         [Inject] private PlayerQuest _playerQuest;
-        
+
         private void AddQusetToPlayer()
         {
             AddQuestToPlayer?.Invoke(_quests[0]);
@@ -35,6 +35,7 @@ namespace Quest
             _quests.Remove(quest);
             if (_quests.Count > 0)
             {
+                if(quest is TalkQuest) return;
                 if (_playerQuest.IsCompletedQuest(_quests[0].PrevIdQuest))
                 {
                     _questGiverUI.SetQuestText(_quests[0], AddQusetToPlayer);
@@ -45,20 +46,41 @@ namespace Quest
             }
             _isAllQuest = true;
         }
+
+        public void CompletedTalkQuest()
+        {
+            if (_isActiveQuest && _playerQuest.IsQuestExist(_quests[0]) && _quests[0].IsCompleted)
+            {
+                _questGiverUI.CompletedQuest(_quests[0],GetBonusesForQuest);
+            }
+        }
         
         private void OnTriggerEnter2D(Collider2D other)
         {
             if(_isAllQuest) return;
             if (other.GetComponent<MainPlayerMovement>())
             {
-                if (_isActiveQuest && _playerQuest.IsQuestExist(_quests[0]) && _quests[0].IsCompleted)
+                if (_isActiveQuest)
                 {
-                    _questGiverUI.CompletedQuest(_quests[0],GetBonusesForQuest);
+                    if (_playerQuest.IsQuestExist(_quests[0]) && _quests[0].IsCompleted)
+                    {
+                        _questGiverUI.CompletedQuest(_quests[0],GetBonusesForQuest);
+                    }
                 }
                 else if (_quests.Count > 0 && _playerQuest.IsCompletedQuest(_quests[0].PrevIdQuest))
                 {
+                    (_quests[0] as TalkQuest)?.SetQuestGiver(this);
                     _questGiverUI.SetQuestText(_quests[0], AddQusetToPlayer);
                 }
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.GetComponent<MainPlayerMovement>())
+            {
+                _questGiverUI.CloseQuestPanel();
+                _questGiverUI.CloseBonusesPanel();
             }
         }
     }

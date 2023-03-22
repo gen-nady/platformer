@@ -11,7 +11,8 @@ namespace Quest
         private List<Quest> _quests = new List<Quest>();
         private List<string> _complitedQuests = new List<string>();
         [Inject] private PlayerQuestUI _playerQuestUI;
-
+        [Inject] private TalkQuestUI _talkQuestUI;
+        
         #region MONO
         private void OnEnable()
         {
@@ -63,8 +64,10 @@ namespace Quest
         public void NpcTalked(string idTalk)
         {
             var quest = _quests.OfType<TalkQuest>().FirstOrDefault(_ => _.Id == idTalk)!;
+            if (quest is null) return;
             quest.NpcTalked(idTalk);
             ChangeProgressQuest(quest);
+            _talkQuestUI.OpenTalkPanel(quest);
         }
 
         private void ChangeProgressQuest(Quest quest)
