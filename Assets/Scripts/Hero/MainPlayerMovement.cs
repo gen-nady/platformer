@@ -61,14 +61,11 @@ public class MainPlayerMovement : MonoBehaviour
             _animator.SetTrigger("Move");
             _isIdle = false;
         }
-        else
+        else if (!_isIdle)
         {
-            if (!_isIdle)
-            {
-                _animator.ResetTrigger("Move");
-                _animator.SetTrigger("Idle");
-                _isIdle = true;
-            }
+            _animator.ResetTrigger("Move");
+            _animator.SetTrigger("Idle");
+            _isIdle = true;
         }
     }
     
