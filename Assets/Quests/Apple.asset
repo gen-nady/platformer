@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92d2cb05fd748d8ac51823c34f03f89, type: 3}
   m_Name: Apple
   m_EditorClassIdentifier: 
-  _id: 93e38830-c161-47be-9cb0-ce147299b092
+  _id: af51c8d8-f607-4db2-ac11-0e44c3457d92
   _title: "\u0425\u041E\u0427\u0423 \u042F\u0411\u041B\u041E\u041A"
   _discription: "\u041D\u0443\u0436\u043D\u043E \u0446\u0435\u043B\u044B\u0445 2
     \u0448\u0442\u0443\u043A\u0438"
