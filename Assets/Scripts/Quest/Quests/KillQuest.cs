@@ -5,14 +5,13 @@ namespace Quest
     [CreateAssetMenu(fileName = "New Kill Quest", menuName = "Quest System/Kill Quest")]
     public class KillQuest : Quest
     {
-        [SerializeField] private int _currentCount;
+        private int _currentCount;
         
-        public void EnemyKilled(string enemyName)
+        public void EnemyKilled(string killId)
         {
-            if (!_isComplete && enemyName == _nameTarget)
+            if (!_isComplete && killId == Id)
             {
                 _currentCount++;
-
                 if (_currentCount == _targetCount)
                 {
                     _isComplete = true;
