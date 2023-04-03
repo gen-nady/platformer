@@ -50,6 +50,7 @@ namespace Quest
         public void EnemyKilled(string idKill)
         {
             var quest = _quests.OfType<KillQuest>().FirstOrDefault(_ => _.Id == idKill)!;
+            if(quest == default) return;
             quest.EnemyKilled(idKill);
             ChangeProgressQuest(quest);
         }
