@@ -1,5 +1,7 @@
 ﻿using System;
+using Infastructure;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +18,19 @@ namespace Quest
         [SerializeField] private TextMeshProUGUI _bonusesText;
         [SerializeField] private GameObject _bonusesPanel;
         [SerializeField] private Button _agreeBonusesButton;
-        
+
+        private void OnEnable()
+        {
+            SceneLoader.OnSceneChange += CloseBonusesPanel;
+            SceneLoader.OnSceneChange += CloseQuestPanel;
+        }
+
+        private void OnDisable()
+        {
+            SceneLoader.OnSceneChange -= CloseBonusesPanel;
+            SceneLoader.OnSceneChange -= CloseQuestPanel;
+        }
+
         public void SetQuestText(Quest quest, Action agreeAction)
         {
             _questPanel.SetActive(true);

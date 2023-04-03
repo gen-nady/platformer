@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Infastructure;
+using UnityEngine;
 using Zenject;
 
 namespace OtherItem
@@ -8,6 +9,16 @@ namespace OtherItem
         [SerializeField] private string _text;
         [Inject] private WorldInfoUI _worldInfoUI;
 
+        private void OnEnable()
+        {
+            SceneLoader.OnSceneChange += CloseText;
+        }
+
+        private void OnDisable()
+        {
+            SceneLoader.OnSceneChange -= CloseText;
+        }
+        
         public void ShowText()
         {
             _worldInfoUI.ShowTableInfoPanel(_text);

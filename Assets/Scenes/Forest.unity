@@ -24053,7 +24053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scenes: {fileID: 11400000, guid: fd8303c30388fb64094c429571d38cd5, type: 2}
-  _positionPoint: {x: -25, y: 7.5, z: 0}
+  _positionPoint: {x: -7.5, y: -15, z: 0}
 --- !u!61 &2130885632
 BoxCollider2D:
   m_ObjectHideFlags: 0

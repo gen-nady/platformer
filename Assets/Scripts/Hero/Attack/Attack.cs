@@ -7,7 +7,6 @@ namespace Hero.Attack
     {
         [SerializeField] protected Transform _transform;
         [SerializeField] protected int _damage;
-        
         public int Damage => _damage;
     }
 }

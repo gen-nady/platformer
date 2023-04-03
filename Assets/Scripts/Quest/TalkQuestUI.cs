@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Infastructure;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,16 @@ namespace Quest
         private int currentPhrase;
         private TalkQuest _quest;
         
+        private void OnEnable()
+        {
+            SceneLoader.OnSceneChange += CloseQuestTalkPanel;
+        }
+
+        private void OnDisable()
+        {
+            SceneLoader.OnSceneChange -= CloseQuestTalkPanel;
+        }
+
         public void OpenTalkPanel(Quest quest)
         {
             _quest = quest as TalkQuest;
@@ -52,6 +63,11 @@ namespace Quest
         {
            _quest.QuestGiver.CompletedTalkQuest();
            _questTalkPanel.SetActive(false);
+        }
+
+        private void CloseQuestTalkPanel()
+        {
+            _questTalkPanel.SetActive(false);
         }
     }
 }

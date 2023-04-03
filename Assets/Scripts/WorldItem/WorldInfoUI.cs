@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Infastructure;
+using TMPro;
 using UnityEngine;
 
 namespace OtherItem
@@ -8,6 +9,16 @@ namespace OtherItem
         [SerializeField] private GameObject _tableInfoPanel;
         [SerializeField] private TextMeshProUGUI _tableInfoText;
 
+        private void OnEnable()
+        {
+            SceneLoader.OnSceneChange += CloseTableInfoPanel;
+        }
+
+        private void OnDisable()
+        {
+            SceneLoader.OnSceneChange -= CloseTableInfoPanel;
+        }
+        
         public void ShowTableInfoPanel(string text)
         {
             _tableInfoPanel.SetActive(true);
