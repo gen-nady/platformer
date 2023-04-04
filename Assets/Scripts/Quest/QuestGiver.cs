@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Zenject;
 
@@ -15,6 +16,16 @@ namespace Quest
         private bool _isAllQuest;
         [Inject] private QuestGiverUI _questGiverUI;
         [Inject] private PlayerQuest _playerQuest;
+
+        private void OnEnable()
+        {
+            if (_quests.Count > 0)
+            {
+                var isActiveQuest = _playerQuest.IsQuestExist(_quests[0].Id);
+                _activeQuestPanel.SetActive(isActiveQuest);
+                _isActiveQuest = isActiveQuest;
+            }
+        }
 
         private void AddQusetToPlayer()
         {

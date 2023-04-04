@@ -8,18 +8,18 @@ namespace ObjectToQuest
     {
         [SerializeField] protected string _idName;
         [Inject] protected PlayerQuest _playerQuest;
-
-        private void Awake()
+        
+        private void OnEnable()
         {
             QuestGiver.AddQuestToPlayer += EnableItem;
-            gameObject.SetActive(false);
+            gameObject.SetActive(_playerQuest.IsQuestExist(_idName));
         }
-   
+        
         private void OnDestroy()
         {
             QuestGiver.AddQuestToPlayer -= EnableItem;
         }
-
+        
         private void EnableItem(Quest.Quest quest)
         {
             if(quest.Id == _idName)

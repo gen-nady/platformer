@@ -35,6 +35,9 @@ namespace Quest
         public bool IsQuestExist(Quest quest)
             => _quests.Any(_ => _.Equals(quest));
         
+        public bool IsQuestExist(string idQuest)
+            => _quests.Any(_ => _.Id == idQuest);
+        
         private void AddQuest(Quest quest)
         {
             _quests.Add(quest);
