@@ -31,10 +31,7 @@ namespace Quest
         {
             return needQuest.All(item => _complitedQuests.Contains(item));
         }
-        
-        public bool IsQuestExist(Quest quest)
-            => _quests.Any(_ => _.Equals(quest));
-        
+
         public bool IsQuestExist(string idQuest)
             => _quests.Any(_ => _.Id == idQuest);
         

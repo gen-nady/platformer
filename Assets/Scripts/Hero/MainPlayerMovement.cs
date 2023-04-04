@@ -1,3 +1,4 @@
+using System;
 using Hero;
 using Infastructure;
 using Services.Input;
@@ -9,7 +10,6 @@ public class MainPlayerMovement : MonoBehaviour
     [SerializeField] private float _jumpForce = 10f;
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private LayerMask _groundLayer;
-    [SerializeField] private HeroAttack _heroAttack;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private Rigidbody2D _rb;
@@ -49,17 +49,21 @@ public class MainPlayerMovement : MonoBehaviour
     private void Movement()
     {
         var moveVector = _inputService.Axis;
-        _rb.velocity = new Vector2(moveVector * _moveSpeed, _rb.velocity.y);
+        if(moveVector != 0)
+            _rb.velocity = new Vector2(moveVector * _moveSpeed, _rb.velocity.y);
         if (moveVector > 0)
         {
-            _spriteRenderer.flipX = false;
+            if(transform.localScale.x < 0)
+                transform.localScale = new Vector3(5,5,1);
+            //_spriteRenderer.flipX = false;
             _animator.ResetTrigger(_idle);
             _animator.SetTrigger(_move);
             _isIdle = false;
         }
         else if (moveVector < 0)
         {
-            _spriteRenderer.flipX = true;
+            if(transform.localScale.x > 0)
+                transform.localScale = new Vector3(-5,5, 1);
             _animator.ResetTrigger(_idle);
             _animator.SetTrigger(_move);
             _isIdle = false;
@@ -69,6 +73,7 @@ public class MainPlayerMovement : MonoBehaviour
             _animator.ResetTrigger(_move);
             _animator.SetTrigger(_idle);
             _isIdle = true;
+            _rb.velocity = new Vector2(0, _rb.velocity.y);
         }
     }
     

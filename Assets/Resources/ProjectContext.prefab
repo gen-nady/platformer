@@ -134,7 +134,6 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  _heroAttack: {fileID: 0}
 --- !u!70 &1307959944260717834
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -209,6 +208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fireball: {fileID: 3499226665154561401, guid: 2f68dedaba3f7b24d96287ef76c05663, type: 3}
   _orderInLayer: 10
+  _timerToCombo: 1
+  _delaySwordAttack: 0.55
+  _powerCombo: 50
 --- !u!1 &1307959944052659849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,6 +1044,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d57cc75919434e9e11666dab0138c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _transform: {fileID: 0}
+  _damage: 4
 --- !u!1 &3089360391891268776
 GameObject:
   m_ObjectHideFlags: 0

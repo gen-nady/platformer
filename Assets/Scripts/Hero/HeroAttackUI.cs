@@ -10,6 +10,7 @@ namespace Hero
         [SerializeField] private Button _coolDownButton;
         [SerializeField] private Image _coolDownImage;
         [SerializeField] private TextMeshProUGUI _coolDownText;
+       
         
         private float _coolDown;
         private float _currentCoolDown;

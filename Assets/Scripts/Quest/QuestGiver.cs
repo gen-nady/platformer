@@ -60,7 +60,7 @@ namespace Quest
 
         public void CompletedTalkQuest()
         {
-            if (_isActiveQuest && _playerQuest.IsQuestExist(_quests[0]) && _quests[0].IsCompleted)
+            if (_isActiveQuest && _playerQuest.IsQuestExist(_quests[0].Id) && _quests[0].IsCompleted)
             {
                 _questGiverUI.CompletedQuest(_quests[0],GetBonusesForQuest);
             }
@@ -73,7 +73,7 @@ namespace Quest
             {
                 if (_isActiveQuest)
                 {
-                    if (_playerQuest.IsQuestExist(_quests[0]) && _quests[0].IsCompleted)
+                    if (_playerQuest.IsQuestExist(_quests[0].Id) && _quests[0].IsCompleted)
                     {
                         _questGiverUI.CompletedQuest(_quests[0],GetBonusesForQuest);
                     }

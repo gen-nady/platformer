@@ -2,7 +2,7 @@
 
 namespace Hero.Attack
 {
-    public class SwordAttack2 : MonoBehaviour
+    public class SwordAttack2 : Attack
     {
         
     }
