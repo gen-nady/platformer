@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Kid
   m_EditorClassIdentifier: 
   _id: b83610a8-628e-498e-9251-56f6d46e259a
-  _title: "\u041F\u043E\u0433\u043E\u0432\u043E\u0440\u0438\u0442\u044C "
-  _discription: "\u041D\u0443\u0436\u043D\u043E \u043D\u0430\u0439\u0442\u0438 \u043A\u0432\u0430\u0434\u0440\u0430\u0442"
+  _title: "\u0414\u0435\u0432\u043E\u0447\u043A\u0430"
+  _discription: "\u0422\u0451\u0442\u0435\u043D\u044C\u043A\u0430, \u0441\u043D\u0438\u043C\u0438\u0442\u0435
+    \u043A\u043E\u0442\u0438\u043A\u0430 \u0441 \u0434\u0435\u0440\u0435\u0432\u0446\u0430,
+    \u043F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430! :\u0441"
   _gold: 5
-  _expirience: 0
+  _expirience: 5
   _prevIdQuest: []
-  _nameTarget: "\u041A\u0432\u0430\u0434\u0440\u0430\u0442\u043E\u0432"
+  _nameTarget: "\u041F\u043E\u0439\u043C\u0430\u043D\u043D\u044B\u0439 \u043A\u043E\u0442"
   _targetCount: 0
-  _npcText:
-  - 1
-  - 2
+  _npcText: []
