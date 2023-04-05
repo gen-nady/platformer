@@ -75,6 +75,7 @@ namespace Quest
         public void ObjectFound(string idFind)
         {
             var quest = _quests.OfType<SearchQuest>().FirstOrDefault(_ => _.Id == idFind)!;
+            if(quest == default) return;
             quest.ObjectFound(idFind);
             ChangeProgressQuest(quest);
         }

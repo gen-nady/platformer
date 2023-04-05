@@ -1,4 +1,5 @@
-﻿using Quest;
+﻿using System;
+using Quest;
 using UnityEngine;
 using Zenject;
 
@@ -14,19 +15,20 @@ namespace ObjectToQuest
         {
             _playerQuest = playerQuest;
         }
-        
-        private void OnEnable()
+
+        protected virtual void OnEnable()
         {
             QuestGiver.AddQuestToPlayer += EnableItem;
+            if(_idName == string.Empty) return;
             gameObject.SetActive(_playerQuest.IsShowQuestObject(_idName));
         }
         
-        private void OnDestroy()
+        protected virtual void OnDestroy()
         {
             QuestGiver.AddQuestToPlayer -= EnableItem;
         }
         
-        private void EnableItem(Quest.Quest quest)
+        protected void EnableItem(Quest.Quest quest)
         {
             if(quest.Id == _idName)
                 gameObject.SetActive(true);

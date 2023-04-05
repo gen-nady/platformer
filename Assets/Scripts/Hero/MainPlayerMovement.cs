@@ -49,8 +49,7 @@ public class MainPlayerMovement : MonoBehaviour
     private void Movement()
     {
         var moveVector = _inputService.Axis;
-        if(moveVector != 0)
-            _rb.velocity = new Vector2(moveVector * _moveSpeed, _rb.velocity.y);
+        _rb.velocity = new Vector2(moveVector * _moveSpeed, _rb.velocity.y);
         if (moveVector > 0)
         {
             if(transform.localScale.x < 0)
@@ -73,7 +72,6 @@ public class MainPlayerMovement : MonoBehaviour
             _animator.ResetTrigger(_move);
             _animator.SetTrigger(_idle);
             _isIdle = true;
-            _rb.velocity = new Vector2(0, _rb.velocity.y);
         }
     }
     

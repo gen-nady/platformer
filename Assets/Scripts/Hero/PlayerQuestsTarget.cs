@@ -8,30 +8,30 @@ namespace Hero
     {
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.GetComponent<PickUpItem>())
+            if (other.TryGetComponent<PickUpItem>(out var pickUp))
             {
-                other.GetComponent<PickUpItem>().PickUp();
+                pickUp.PickUp();
                 return;
             }
             
-            if (other.GetComponent<TalkNPC>())
+            if (other.TryGetComponent<TalkNPC>(out var talk))
             {
-                other.GetComponent<TalkNPC>().Talk();
+                talk.Talk();
                 return;
             }
             
-            if (other.GetComponent<TableInfo>())
+            if (other.TryGetComponent<TableInfo>(out var table))
             {
-                other.GetComponent<TableInfo>().ShowText();
+                table.ShowText();
                 return;
             }
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.GetComponent<TableInfo>())
+            if (other.TryGetComponent<TableInfo>(out var table))
             {
-                other.GetComponent<TableInfo>().CloseText();
+                table.CloseText();
                 return;
             }
         }

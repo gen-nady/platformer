@@ -1,6 +1,8 @@
-﻿using Infastructure;
+﻿using System;
+using Infastructure;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace OtherItem
 {
@@ -9,7 +11,7 @@ namespace OtherItem
         [SerializeField] private GameObject _tableInfoPanel;
         [SerializeField] private TextMeshProUGUI _tableInfoText;
         [SerializeField] private GameObject _loadingPanel;
-        
+        [SerializeField] private Button _buttonAction;
         private void OnEnable()
         {
             SceneLoader.OnSceneChange += CloseTableInfoPanel;
@@ -39,6 +41,18 @@ namespace OtherItem
         public void CloseLoading()
         {
             _loadingPanel.SetActive(false);
+        }
+        
+        public void OpenButtonActionPanel(Action action)
+        {
+            _buttonAction.gameObject.SetActive(true);
+            _buttonAction.onClick.AddListener(() => action?.Invoke());
+        }
+        
+        public void CloseButtonActionPanel()
+        {
+            _buttonAction.gameObject.SetActive(false);
+            _buttonAction.onClick.RemoveAllListeners();
         }
     }
 }
