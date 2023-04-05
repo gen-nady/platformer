@@ -8,7 +8,8 @@ namespace OtherItem
     {
         [SerializeField] private GameObject _tableInfoPanel;
         [SerializeField] private TextMeshProUGUI _tableInfoText;
-
+        [SerializeField] private GameObject _loadingPanel;
+        
         private void OnEnable()
         {
             SceneLoader.OnSceneChange += CloseTableInfoPanel;
@@ -28,6 +29,16 @@ namespace OtherItem
         public void CloseTableInfoPanel()
         {
             _tableInfoPanel.SetActive(false);
+        }
+        
+        public void OpenLoading()
+        {
+            _loadingPanel.SetActive(true);
+        }
+        
+        public void CloseLoading()
+        {
+            _loadingPanel.SetActive(false);
         }
     }
 }
