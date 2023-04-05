@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1e7c4f9e0b643ae9d535fec7f3f9104, type: 3}
+  m_Name: '!Resetter'
+  m_EditorClassIdentifier: 
+  Quests:
+  - {fileID: 11400000, guid: b76193f0bb7c8954abe3ef407614093d, type: 2}
+  - {fileID: 11400000, guid: 74cc3c1e8b84691438b7f67c8268a263, type: 2}
+  - {fileID: 11400000, guid: 913449ec4fc25e440a96e46cfe5b9759, type: 2}
+  - {fileID: 11400000, guid: d5be480939791844b956c2c6a2c9de34, type: 2}
+  - {fileID: 11400000, guid: 2825c8931c0fe9e4c9b5d50bf1e39901, type: 2}
+  - {fileID: 11400000, guid: b4b502c3f272d4949a0582862e500511, type: 2}
+  - {fileID: 11400000, guid: 6f4563b3a60009442a4c544a85ade9f7, type: 2}

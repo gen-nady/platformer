@@ -7,18 +7,6 @@ namespace Quest
     {
         private int _currentCount;
 
-        #region MONO
-        private void OnEnable()
-        {
-            Reset();
-        }
-
-        private void OnDisable()
-        {
-            Reset();
-        }
-        #endregion
-        
         public void ObjectFound(string findObjectName)
         {
             if (!_isComplete && findObjectName == Id)
@@ -35,8 +23,8 @@ namespace Quest
         {
             return _isComplete ?  $"Предметы {_nameTarget} найдены!" : $"Найдено {_nameTarget} {_currentCount} из {_targetCount}";
         }
-        
-        public override void Reset()
+
+        public override void ResetValue()
         {
             _currentCount = 0;
             _isComplete = false;

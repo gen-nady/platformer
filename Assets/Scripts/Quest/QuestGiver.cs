@@ -14,16 +14,38 @@ namespace Quest
         [SerializeField] private GameObject _activeQuestPanel;
         private bool _isActiveQuest;
         private bool _isAllQuest;
-        [Inject] private QuestGiverUI _questGiverUI;
-        [Inject] private PlayerQuest _playerQuest;
+        private QuestGiverUI _questGiverUI;
+        private PlayerQuest _playerQuest;
 
+        [Inject]
+        private void Construct(QuestGiverUI questGiverUI, PlayerQuest playerQuest)
+        {
+            _questGiverUI = questGiverUI;
+            _playerQuest = playerQuest;
+        }
+        
         private void OnEnable()
         {
             if (_quests.Count > 0)
             {
-                var isActiveQuest = _playerQuest.IsQuestExist(_quests[0].Id);
-                _activeQuestPanel.SetActive(isActiveQuest);
-                _isActiveQuest = isActiveQuest;
+                for (int i = 0; i < _quests.Count; i++)
+                {
+                    if (_playerQuest.IsCompletedQuest(_quests[i].Id))
+                    {
+                        _quests.RemoveAt(i);
+                    }
+                    else
+                    {
+                        var isActiveQuest = _playerQuest.IsQuestExist(_quests[0].Id);
+                        _activeQuestPanel.SetActive(isActiveQuest);
+                        _isActiveQuest = isActiveQuest;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                _isAllQuest = true;
             }
         }
 

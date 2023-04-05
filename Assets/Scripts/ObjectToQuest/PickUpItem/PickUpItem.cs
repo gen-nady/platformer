@@ -1,4 +1,5 @@
-﻿using Quest;
+﻿using System;
+using Quest;
 using UnityEngine;
 using Zenject;
 
@@ -7,20 +8,27 @@ namespace ObjectToQuest
     public abstract class PickUpItem : MonoBehaviour
     {
         [SerializeField] protected string _idName;
-        [Inject] protected PlayerQuest _playerQuest;
+        protected PlayerQuest _playerQuest;
         
-        private void OnEnable()
+        [Inject]
+        private void Construct(PlayerQuest playerQuest)
+        {
+            _playerQuest = playerQuest;
+        }
+
+        protected virtual void OnEnable()
         {
             QuestGiver.AddQuestToPlayer += EnableItem;
-            gameObject.SetActive(_playerQuest.IsQuestExist(_idName));
+            if(_idName == string.Empty) return;
+            gameObject.SetActive(_playerQuest.IsShowQuestObject(_idName));
         }
         
-        private void OnDestroy()
+        protected virtual void OnDestroy()
         {
             QuestGiver.AddQuestToPlayer -= EnableItem;
         }
         
-        private void EnableItem(Quest.Quest quest)
+        protected void EnableItem(Quest.Quest quest)
         {
             if(quest.Id == _idName)
                 gameObject.SetActive(true);

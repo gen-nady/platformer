@@ -17,7 +17,7 @@ namespace Hero.Attack
                 if (_lifePoints <= 0)
                 {
                     _playerQuest.EnemyKilled(_idName);
-                    Destroy(gameObject);
+                    gameObject.SetActive(false);
                 }
                
             }

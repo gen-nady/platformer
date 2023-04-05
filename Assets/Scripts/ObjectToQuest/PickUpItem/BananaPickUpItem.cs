@@ -5,7 +5,7 @@
         public override void PickUp()
         {
             _playerQuest.ObjectFound(_idName);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         } 
     }
 }

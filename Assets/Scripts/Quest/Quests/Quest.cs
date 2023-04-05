@@ -21,8 +21,6 @@ namespace Quest
         public string Title => _title;
         public string Discription => _discription;
         
-        public abstract void Reset();
-
         public abstract string CurrentTextProgress();
         
         private void OnValidate()
@@ -43,5 +41,7 @@ namespace Quest
         {
            return $"Золото х{_gold} \n Опыт х{_expirience}";
         }
+
+        public abstract void ResetValue();
     }
 }

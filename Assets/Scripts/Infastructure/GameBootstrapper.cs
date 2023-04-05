@@ -9,10 +9,7 @@ namespace Infastructure
 
         private void Awake()
         {
-            
             _game = new Game(_joystick);
-            
-            DontDestroyOnLoad(this);
         }
     }
 }

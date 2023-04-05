@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Quest
 {
     [CreateAssetMenu(fileName = "New Kill Quest", menuName = "Quest System/Kill Quest")]
     public class KillQuest : Quest
     {
-        private int _currentCount;
+        [SerializeField] private int _currentCount;
         
         public void EnemyKilled(string killId)
         {
@@ -24,7 +25,7 @@ namespace Quest
             return $"Убито {_currentCount} из {_targetCount}";
         }
         
-        public override void Reset()
+        public override void ResetValue()
         {
             _currentCount = 0;
             _isComplete = false;

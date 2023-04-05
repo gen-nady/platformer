@@ -7,8 +7,14 @@ namespace OtherItem
     public class TableInfo : MonoBehaviour
     {
         [SerializeField] private string _text;
-        [Inject] private WorldInfoUI _worldInfoUI;
-
+        private WorldInfoUI _worldInfoUI;
+        
+        [Inject]
+        private void Construct(WorldInfoUI worldInfoUI)
+        {
+            _worldInfoUI = worldInfoUI;
+        }
+        
         private void OnEnable()
         {
             SceneLoader.OnSceneChange += CloseText;

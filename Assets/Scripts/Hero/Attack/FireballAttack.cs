@@ -6,6 +6,7 @@ namespace Hero.Attack
     //пока так. Потом как продумается реализация других атак, исправить. Мб через стратегию
     public class FireballAttack : Attack
     {
+        [SerializeField] private Transform _transform;
         [SerializeField] private float _coolDown;
         [SerializeField] private float _timeToDestroy;
         [SerializeField] private int _speed;
