@@ -1,6 +1,6 @@
 ﻿using Infastructure;
-using UnityEngine;
 using UnityEditor;
+using UnityEngine;
 
 public class ScriptableObjectResetter : EditorWindow
 {
@@ -14,7 +14,6 @@ public class ScriptableObjectResetter : EditorWindow
     
     private void OnGUI()
     {
-        EditorGUILayout.LabelField($"Reset Fields to {_scriptableObjectList.Quests.Count} for Selected ScriptableObjects");
         _scriptableObjectList = EditorGUILayout.ObjectField("ScriptableObjects List", _scriptableObjectList, typeof(ScriptableObjectList), true) as ScriptableObjectList;
 
         if (GUILayout.Button("Reset"))

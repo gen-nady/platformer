@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scenes: {fileID: 11400000, guid: 01ff00a76ac4a2541a1f49daaecaf103, type: 2}
   _positionPoint: {x: 11, y: 0.5, z: 0}
+  _textButton: 
 --- !u!61 &6680989
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -841,6 +842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scenes: {fileID: 11400000, guid: 21ad175ea83f32d47a4158ad2641b5d9, type: 2}
   _positionPoint: {x: -59, y: 1.66, z: 0}
+  _textButton: 
 --- !u!61 &433286978
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2717,7 +2719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &755078847
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4089,7 +4091,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _idName: 
   _rigidbody: {fileID: 1174216711}
-  _freshness: 1
+  _freshness: 3
 --- !u!61 &1174216713
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14037,6 +14039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scenes: {fileID: 11400000, guid: fd8303c30388fb64094c429571d38cd5, type: 2}
   _positionPoint: {x: -7.5, y: -15, z: 0}
+  _textButton: 
 --- !u!61 &2130885632
 BoxCollider2D:
   m_ObjectHideFlags: 0

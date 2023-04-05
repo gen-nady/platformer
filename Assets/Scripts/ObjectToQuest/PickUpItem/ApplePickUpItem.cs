@@ -9,7 +9,7 @@ namespace ObjectToQuest
     {
         [SerializeField] private Rigidbody2D _rigidbody;
         [SerializeField] private AppleFreshness _freshness;
-        
+
         public void EnablePhysics()
         {
             _rigidbody.simulated = true;

@@ -4,6 +4,7 @@
     {
         None = 0,
         Rotten,
-        Ripe
+        Ripe,
+        Gold
     }
 }
