@@ -14,9 +14,16 @@ namespace Quest
         [SerializeField] private GameObject _activeQuestPanel;
         private bool _isActiveQuest;
         private bool _isAllQuest;
-        [Inject] private QuestGiverUI _questGiverUI;
-        [Inject] private PlayerQuest _playerQuest;
+        private QuestGiverUI _questGiverUI;
+        private PlayerQuest _playerQuest;
 
+        [Inject]
+        private void Construct(QuestGiverUI questGiverUI, PlayerQuest playerQuest)
+        {
+            _questGiverUI = questGiverUI;
+            _playerQuest = playerQuest;
+        }
+        
         private void OnEnable()
         {
             if (_quests.Count > 0)

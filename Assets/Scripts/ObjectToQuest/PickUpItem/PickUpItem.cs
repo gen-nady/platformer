@@ -7,7 +7,13 @@ namespace ObjectToQuest
     public abstract class PickUpItem : MonoBehaviour
     {
         [SerializeField] protected string _idName;
-        [Inject] protected PlayerQuest _playerQuest;
+        protected PlayerQuest _playerQuest;
+        
+        [Inject]
+        private void Construct(PlayerQuest playerQuest)
+        {
+            _playerQuest = playerQuest;
+        }
         
         private void OnEnable()
         {

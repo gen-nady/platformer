@@ -38,7 +38,7 @@ RectTransform:
   - {fileID: 3233982901521003726}
   - {fileID: 2601320741193548860}
   m_Father: {fileID: 6186712407205412270}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -671,7 +671,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a21da030ba04531b59c9a826a995efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transform: {fileID: 0}
   _damage: 2
 --- !u!1 &1195387874006664948
 GameObject:
@@ -703,7 +702,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6186712407205412270}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1195387874006664949
 MonoBehaviour:
@@ -2043,7 +2042,7 @@ RectTransform:
   m_Children:
   - {fileID: 2731738872629183609}
   m_Father: {fileID: 6186712407205412270}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2128,6 +2127,55 @@ MonoBehaviour:
   _desriptionText: {fileID: 2731738873532731969}
   _nextButton: {fileID: 2731738874588538515}
   _getRewardButton: {fileID: 2731738874120180008}
+--- !u!1 &3814075482569026041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8289766151894446926}
+  - component: {fileID: 5027315104861944578}
+  m_Layer: 0
+  m_Name: UIInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8289766151894446926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3814075482569026041}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6186712407205412270}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5027315104861944578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3814075482569026041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11c4afeced048aab62d122266be5b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerQuestUI: {fileID: 8754629156550178658}
+  _questGiverUI: {fileID: 4621864297506181829}
+  _worldInfoUI: {fileID: 5183596500128867980}
+  _talkQuestUI: {fileID: 2731738874600789870}
+  _heroAttackUI: {fileID: 615212207454083737}
 --- !u!1 &4419307096274679366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,7 +2207,7 @@ Transform:
   m_Children:
   - {fileID: 120047915525078754}
   m_Father: {fileID: 6186712407205412270}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &833983258899822159
 MonoBehaviour:
@@ -2853,7 +2901,7 @@ RectTransform:
   - {fileID: 4621864297846944550}
   - {fileID: 4621864297034941218}
   m_Father: {fileID: 6186712407205412270}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3887,7 +3935,7 @@ MonoBehaviour:
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 3.75, z: -10}
   m_XDamping: 1
-  m_YDamping: 2
+  m_YDamping: 0.5
   m_ZDamping: 1
   m_AngularDampingMode: 0
   m_PitchDamping: 0
@@ -3928,7 +3976,7 @@ RectTransform:
   m_Children:
   - {fileID: 5183596501934679216}
   m_Father: {fileID: 6186712407205412270}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4293,7 +4341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22d57cc75919434e9e11666dab0138c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transform: {fileID: 0}
   _damage: 4
 --- !u!1 &6721448245489185876
 GameObject:
@@ -4325,6 +4372,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6912551745693379292}
+  - {fileID: 8289766151894446926}
   - {fileID: 1195387874006664946}
   - {fileID: 8709252891105148640}
   - {fileID: 615212207454083734}
@@ -4351,6 +4399,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 6912551745693379293}
+  - {fileID: 5027315104861944578}
   _installerPrefabs: []
   _parentNewObjectsUnderContext: 1
   _editorReflectionBakingCoverageMode: 0
@@ -4410,11 +4459,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerQuest: {fileID: 8709252890781067818}
-  _playerQuestUI: {fileID: 8754629156550178658}
-  _questGiverUI: {fileID: 4621864297506181829}
-  _worldInfoUI: {fileID: 5183596500128867980}
-  _talkQuestUI: {fileID: 2731738874600789870}
-  _heroAttackUI: {fileID: 615212207454083737}
 --- !u!1 &8198114326605694197
 GameObject:
   m_ObjectHideFlags: 0
@@ -4741,7 +4785,7 @@ Transform:
   - {fileID: 1114446606307172294}
   - {fileID: 1770519045280449303}
   m_Father: {fileID: 6186712407205412270}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8709252891105148641
 SpriteRenderer:
@@ -4828,12 +4872,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba349f9a9f359b04187c01a35a547619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 8
-  _jumpForce: 15
   _groundCheck: {fileID: 8709252890975793580}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  _moveSpeed: 8
+  _jumpForce: 15
 --- !u!70 &8709252890781067822
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4910,7 +4954,6 @@ MonoBehaviour:
   _orderInLayer: 10
   _timerToCombo: 1
   _delaySwordAttack: 0.55
-  _powerCombo: 50
 --- !u!1 &8754629155328713208
 GameObject:
   m_ObjectHideFlags: 0
@@ -5091,7 +5134,7 @@ RectTransform:
   m_Children:
   - {fileID: 8754629155950752852}
   m_Father: {fileID: 6186712407205412270}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using Hero.Attack;
+﻿using Hero.Attack;
 using UnityEngine;
 using Zenject;
 
@@ -13,23 +11,27 @@ namespace Hero
         [SerializeField] private int _orderInLayer;
         [SerializeField] private float _timerToCombo;
         [SerializeField] private float _delaySwordAttack;
-        [SerializeField] private float _powerCombo;
-        [Inject] private HeroAttackUI _heroAttackUI;
         
+        private HeroAttackUI _heroAttackUI;
+        private Transform _transform;
+        private Animator _animator;
         private float _currentDelaySwordAttack;
         private float _currentTimerToCombo;
         private int _currentCombo;
-        private SpriteRenderer _spriteRenderer;
-        private Animator _animator;
-        private Rigidbody2D _rigibody;
+     
         private readonly int _attack1 = Animator.StringToHash("Attack1");
         private readonly int _attack2 = Animator.StringToHash("Attack2");
+
+        [Inject]
+        private void Construct(HeroAttackUI heroAttackUI)
+        {
+            _heroAttackUI = heroAttackUI;
+        }
         
         private void Awake()
         {
             _animator = GetComponent<Animator>();
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-            _rigibody = GetComponent<Rigidbody2D>();
+            _transform = GetComponent<Transform>();
             _orderInLayer *= -1;
             _currentTimerToCombo = 0;
             _currentCombo = 0;
@@ -50,11 +52,11 @@ namespace Hero
             var positionHero = transform.position;
             var position = new Vector3(positionHero.x, positionHero.y, _orderInLayer);
             var fireball = Instantiate(_fireball, position, Quaternion.identity);
-            fireball.SetDirection(_spriteRenderer.flipX ? Vector2.left : Vector2.right);
+            fireball.SetDirection(_transform.localScale.x > 0 ? Vector2.right : Vector2.left);
             _heroAttackUI.StartCooldDown(fireball.CoolDown);
         }
         
-        public async void SwordAttack()
+        public void SwordAttack()
         {
             if (_currentDelaySwordAttack > 0 && _currentCombo > 0) return;
             _currentDelaySwordAttack = _delaySwordAttack;
@@ -69,14 +71,6 @@ namespace Hero
                 _animator.SetTrigger(_attack2);
                 _currentCombo = 0;
             }
-            // else if (_currentCombo == 2)
-            // {
-            //     _currentCombo = 0;
-            //     _currentTimerToCombo = _timerToCombo;
-            //     _rigibody.AddForce(new Vector2(transform.localScale.x * _powerCombo,0), ForceMode2D.Force);
-            //     await Task.Delay(500);
-            //     _rigibody.velocity = new Vector2(0f, _rigibody.velocity.y);
-            // }
         }
     }
 }

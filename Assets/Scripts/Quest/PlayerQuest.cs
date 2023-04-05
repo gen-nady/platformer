@@ -10,8 +10,8 @@ namespace Quest
     {
         private List<Quest> _quests = new List<Quest>();
         private List<string> _complitedQuests = new List<string>();
-        [Inject] private PlayerQuestUI _playerQuestUI;
-        [Inject] private TalkQuestUI _talkQuestUI;
+        private PlayerQuestUI _playerQuestUI;
+        private TalkQuestUI _talkQuestUI;
         
         #region MONO
         private void OnEnable()
@@ -26,6 +26,14 @@ namespace Quest
             QuestGiver.QuestCompleted -= QuestComplited;
         }
         #endregion 
+        
+        [Inject]
+        private void Construct(PlayerQuestUI playerQuestUI, TalkQuestUI talkQuestUI)
+        {
+            _playerQuestUI = playerQuestUI;
+            _talkQuestUI = talkQuestUI;
+        }
+
         
         public bool IsCompletedQuest(List<string> needQuest)
         {
