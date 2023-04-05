@@ -1003,6 +1003,42 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 6f4563b3a60009442a4c544a85ade9f7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3d6fcda2562e2641bfc809465f0b69b, type: 3}
+--- !u!61 &475162902 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6000298485300729591, guid: e3d6fcda2562e2641bfc809465f0b69b, type: 3}
+  m_PrefabInstance: {fileID: 475162901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &475162903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6000298484851392501, guid: e3d6fcda2562e2641bfc809465f0b69b, type: 3}
+  m_PrefabInstance: {fileID: 475162901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &475162904 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6000298485300729590, guid: e3d6fcda2562e2641bfc809465f0b69b, type: 3}
+  m_PrefabInstance: {fileID: 475162901}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475162907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330df28280564d669fa1ef84423c21c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &475162905 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6000298485300729589, guid: e3d6fcda2562e2641bfc809465f0b69b, type: 3}
+  m_PrefabInstance: {fileID: 475162901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &475162906 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6000298485300729588, guid: e3d6fcda2562e2641bfc809465f0b69b, type: 3}
+  m_PrefabInstance: {fileID: 475162901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &475162907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6000298485300729584, guid: e3d6fcda2562e2641bfc809465f0b69b, type: 3}
+  m_PrefabInstance: {fileID: 475162901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &503273849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2674,6 +2710,7 @@ GameObject:
   m_Component:
   - component: {fileID: 755078848}
   - component: {fileID: 755078847}
+  - component: {fileID: 755078849}
   m_Layer: 0
   m_Name: apple_rotten_60x60px
   m_TagString: Untagged
@@ -2748,6 +2785,25 @@ Transform:
   m_Father: {fileID: 361729457}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &755078849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755078846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 1
+  saveChildren: 0
+  componentsToSave: []
 --- !u!1 &856041770
 GameObject:
   m_ObjectHideFlags: 0
@@ -2926,6 +2982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 893646688}
   - component: {fileID: 893646689}
+  - component: {fileID: 893646690}
   m_Layer: 0
   m_Name: apple_regular_60x60px (8)
   m_TagString: Untagged
@@ -3000,6 +3057,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &893646690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893646687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 1
+  saveChildren: 0
+  componentsToSave: []
 --- !u!1 &931533864
 GameObject:
   m_ObjectHideFlags: 0
@@ -3013,6 +3089,7 @@ GameObject:
   - component: {fileID: 931533868}
   - component: {fileID: 931533867}
   - component: {fileID: 931533869}
+  - component: {fileID: 931533870}
   m_Layer: 0
   m_Name: apple_regular_60x60px (3)
   m_TagString: Untagged
@@ -3149,6 +3226,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
+--- !u!114 &931533870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931533864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 1
+  saveChildren: 0
+  componentsToSave: []
 --- !u!1 &940155579
 GameObject:
   m_ObjectHideFlags: 0
@@ -3776,6 +3872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1169498986}
   - component: {fileID: 1169498987}
+  - component: {fileID: 1169498988}
   m_Layer: 0
   m_Name: apple_regular_60x60px (7)
   m_TagString: Untagged
@@ -3850,6 +3947,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1169498988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169498985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 1
+  saveChildren: 0
+  componentsToSave: []
 --- !u!1 &1174216708
 GameObject:
   m_ObjectHideFlags: 0
@@ -3863,6 +3979,7 @@ GameObject:
   - component: {fileID: 1174216712}
   - component: {fileID: 1174216711}
   - component: {fileID: 1174216713}
+  - component: {fileID: 1174216714}
   m_Layer: 0
   m_Name: apple_golden_60x60px
   m_TagString: Untagged
@@ -3999,6 +4116,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
+--- !u!114 &1174216714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174216708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 1
+  saveChildren: 0
+  componentsToSave: []
 --- !u!1 &1175739677
 GameObject:
   m_ObjectHideFlags: 0
@@ -4516,6 +4652,388 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1331836093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1331836096}
+  - component: {fileID: 1331836095}
+  - component: {fileID: 1331836094}
+  m_Layer: 0
+  m_Name: Easy Save 3 Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1331836094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331836093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9107aee0ced90422da95f0b31680501f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 627bd8db-9471-46b1-949d-59d17e40f65e
+  saveEvent: 1
+  loadEvent: 1
+  settings:
+    _location: 4
+    path: SaveFile.es3
+    encryptionType: 0
+    compressionType: 0
+    encryptionPassword: password
+    directory: 0
+    format: 0
+    prettyPrint: 1
+    bufferSize: 2048
+    saveChildren: 1
+    postprocessRawCachedData: 0
+    typeChecking: 1
+    safeReflection: 1
+    memberReferenceMode: 0
+    referenceMode: 2
+    serializationDepthLimit: 64
+    assemblyNames:
+    - Assembly-CSharp-firstpass
+    - Assembly-CSharp
+    showAdvancedSettings: 0
+--- !u!114 &1331836095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331836093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a83408fcc9044c4fbc7e5d09a369ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openPrefabs: 0
+  prefabs: []
+  idRef:
+    _Keys: dc09096100944c1ce7188ea5606cfd6e4db667e1ff05901e627637aadacec02b3528ea2457e06d19b6f04b7088462b0a7c06e91d0f9b205a5b8d9ac9b6b5517e5175de9d7dd61b1e9a27ff8a5da2424bdab9db895622c52c052a5515a1aae14724812b0fb91f9657393d8cff8a75c628a241fa50ad5ea90bcae398a8352a8500bdf675cf1e1c4357339697ce6aa2b42eb0b179fcaa0b654543a917e4580e613763e7cd5facf50d07c12c23dd77381344f628ff5ed8a5b64f922f8d75045fff24caa0947d2bab7e46d1f40ac944a5ff66a472bed62f42bd7a7a31750403d0ce49bd5cda810dc00f0861e232829767fd212b4712d7a395194b5646fdb59c72814e7213b8a8847d16748ac9a12397d467605163e4b78704510b70df017655951e52b5d94c6ab8767e3376252bc7c35a6b2b9d7e0b54e05a5a57a379d8f8852e2d510a0eb9438ff506230a9acda1aeb04f09f8b81b08f9fc2b1486aad4dbbd25cd4607252e2dec51456e862e5f7a27fb0552371dfe33ecdaa80739cec839c9e2e03099eb66777ddee24801757c35624e13765a7eed24dcffcc2d83d90be277f45b67f0701ec36b712a1500b9ce88a28d5b15bb51de4bf5bc5467b994f4a3d2ffd1092f1bbb0dcfb0f51653d72494ce55cf0a810962372c59a3341cb67cff66cee8008c57ca3acb39bf3a183ba5792eb2ba6cba0a08e26840660d9c00da249df7c978bff029862cf47d7a11db836d50a923304ef5f03661859d5d1c896365f4c36221712d371edc40993b72722d7342064246dcf52a57f86de94472785c49a81d912bc25b21811ebdf30e5cb4c4ef58291a16bae3bf151146e520177cab63e34f9355e101b0e7e5c1276616c64b52ce2763495e46028bdca73c0840426aa212902a0cdf91f1a986cdcf7a0c252cd89138ef0f1862059c4d0779393c57595ca97aac799c3e305f180dcf2b167c9602d3159979317a89b08b8dbf19f5d491d08c8c2f6f864d8b2f96b0d70b6e25792f8e8899500e2d71dbfca3fb0e81e895bb84006176b3d8847976951d7ea37d1db007eea87e921e3da1e4ac8d1daf824f80ba6c706cc5037db60420d95bb50fc78179b5f96f91132a65c3bf9105b499340cb9623b1013758af593a17d71ba1e122a1af35c078ae0efa6420aa90472776a9d54e51516b52891fbd5fc241097b820e1d2bc203fc4d26a66ad1eac07cd85831b36df1c5f332975f26260327afbfff0751538cd4a582bda817baf682cd598c85a7f4047499cc014fc3113a12406e461ad0e221c0554cdc40b059ae41d6e5ee235672805444858ee2ab23584448ab57c974dbb1d084c3251b3fbadb1002308702dcf934323e01d66b534f2521eb77f7eb0e1b22f4dbe2515ca28aeb765a8ed4dbba5b2131dfa9fb7305567d4581fcc9584d49d1d70d8226fa97e78fa722b34f1b95b698769939ba9816a60a226079155a4e6cd6e450bbe94c821bc9b729b2a5b89598db449452bf138f39b067881b750f03261a607a337c41afd508b4fc9e3e36b44d37f7822f416ed4158c659c60d48696cab3f3984542c9151ce470aa0a101d77f71bc53c728edd9886bb74a909520f5670a441da4aae7efa7ee270ec5deb25fa81125363664ce6b67e63e100d7701bbae52a3551be084d6a653054ab1046299e1e80c7e8f16d43426507a75eaf8e32fec6c60723c5d45c78c4e8f7696e7e393b6270d236b834ac426d77b6a5cf9edae70d55d44a4f05e84a344f122a64ac90e340e2b3eebbfc569219b4b631e25936c9e1efa3f8b9ff0c6c988802593286b71a18a9f69262bc3b110f42207a6faa3c8d85dc078b076672c010ef7623f9fd7f830d9c257c4fc91cae1ab506a7de821cee5b84d3469f2c22b22726716cb9e8d8ee2d62834394b8cd4ee8a5a5b392e50e613d78379ae5d6fc2e869cb379c5701bce13d7852eeaa6a66d486ba2299666450c34e2a0b1b14df8566664c5de83bc76877628676a6a3f7686c1da4285eb3a4b031e3054d2ef6d8f51dfdb9775e0c7d98bf51aa04eddbf7674592780191481de6f4037033c0eb6992c4836c5b5d6f0a609f0b6851a1573ba91362f86581299a2b1f2c7c61844fa75444c2366890633b4a62275e63b26e874b3e1947211b31ec11e1688531f2a9e3eeb3bd95648da418b026ae025a35c923714b375f69f7798f8a50b7b52822f5a846bc904f6efb13261ccd08b76d2e9246ab8bf67c2af8b208c5d2f4eb29eff0d11c5648165b7ab56d5e5e7c36113fdea4418ef5631873d24f0987899b0f02afd222c864e8198515dbbe9b24777a7cf787f44faa9a1b53e98f289720e310e6a2a25156ecb726f68bbd791aa47c4e5cd48d9002a7c056eb48894d0cef4e5bf9eba53dc6c8d168afaefec4ec2100079a227c93518ced7262f9660e62691a1b26e77ed000c0786dfdda1eac5603950cb86f19d1941d526bfe32a0bf2fdfca18c919ead49fd1085a65156fd35466365f635ac5d182ebaf44c61531cc9ec86223a5377570ee6aab1a67bf36aa8d26c0639600dd765a63644b36d1f07660c4442d886dd1e20f398f07aeab3842225ad161aa329d615a2682422ed6c5e386ca462a0464221f55de542f711b3751d5ddd623008fcc2d26e2d2520fec4bc78c547f790f9cba79820f49777a322d89a12be850005d1cea698cae19c98bd0bed6e4433a654fbcc6dca25f0fd943a759105cf33bd49bc62e379410654bd4420de0084e5d8997100e1750d35dfe0d1125e454096c696a16c4e2eafc2fc1a8ee4e1a92101e6ffb3087b41bdb7cc868302a83ea806022505a8a0e76857455f44a192210f6396cbf303fc0de876fff1b84f1f6874331e3d06c1f7b6edf4d706673b4e4d84c54d6b08e941264d31b81a41cf4ea9bbb591060f2aca95f236ed057e658fc2f70430d8416706c1c81475c786129ad159c0c21ccc445cbf8fd362c029b96b4d4e851cc2717997ab4130c2054f7de3fb3e31af5f37ac9f4b60f047db3bb957f156d3160b25c85fe03926db9b82476011ff621e7b6a2c15a1e5c7d361b1cc6f97d8c0b9679791cdd5bb863e7c57e8d565e1c087a187d53257af95ebd997b36b72e8c7fdcbc543a7137bf250fda4ee2e6cb733b908863a45978920ed5e671c45f963544d4ab3b739cb0a243df41f6a0fda9ab47c7008184f0c5dd51a541280cecbebd53313ff69d9500e440836d3fd73decc62b3b2afd5e14b1540d3215e7222651cf6300b590424df14e391d4101828606146ef8acb9e944e4977f1416305518f8982b3ea3d8f37d08782c87c8bd2c4f2d7838d7aae62cf546571ab3efd2c93f06df1525d3ba1dd2df0e11348c700da2c4cf19
+    _Values:
+    - {fileID: 1990307195}
+    - {fileID: 1990307196}
+    - {fileID: 1697785839}
+    - {fileID: 1697785840}
+    - {fileID: 1697785841}
+    - {fileID: 21300000, guid: eadbd21a692854f4b8db99ba17ccaad8, type: 3}
+    - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 2031029260}
+    - {fileID: 2031029261}
+    - {fileID: 2031029264}
+    - {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+    - {fileID: 2031029263}
+    - {fileID: 6200000, guid: 474a8d4165111cb439d5b036abc84113, type: 2}
+    - {fileID: 2031029262}
+    - {fileID: 11500000, guid: 11f25d9ed4df4e0b864966e58961aaae, type: 3}
+    - {fileID: 1664455624}
+    - {fileID: 1664455625}
+    - {fileID: 1664455628}
+    - {fileID: 1664455627}
+    - {fileID: 1664455626}
+    - {fileID: 475162907}
+    - {fileID: 475162906}
+    - {fileID: 475162905}
+    - {fileID: 475162904}
+    - {fileID: 11500000, guid: 330df28280564d669fa1ef84423c21c9, type: 3}
+    - {fileID: 11400000, guid: 6f4563b3a60009442a4c544a85ade9f7, type: 2}
+    - {fileID: 11500000, guid: e92d2cb05fd748d8ac51823c34f03f89, type: 3}
+    - {fileID: 475162903}
+    - {fileID: 475162902}
+    - {fileID: 4040678125191611136}
+    - {fileID: 4040678125191611164}
+    - {fileID: 4040678125191611165}
+    - {fileID: 21300000, guid: cfde49b45744d1348be7c2bbd5e3d03b, type: 3}
+    - {fileID: 4040678125191611138}
+    - {fileID: 4040678125191611139}
+    - {fileID: 11500000, guid: ef872a9360e841c1b95c746691a19aa8, type: 3}
+    - {fileID: 1094628276}
+    - {fileID: 1094628278}
+    - {fileID: 1094628277}
+    - {fileID: 1375819077}
+    - {fileID: 1375819078}
+    - {fileID: 1072223257}
+    - {fileID: 1072223259}
+    - {fileID: 1072223258}
+    - {fileID: -286970669, guid: 24414b22e761db5499d7bdb615e74a15, type: 3}
+    - {fileID: 1952037827}
+    - {fileID: 1952037829}
+    - {fileID: 1952037828}
+    - {fileID: -398448597, guid: 24414b22e761db5499d7bdb615e74a15, type: 3}
+    - {fileID: 301674657}
+    - {fileID: 301674659}
+    - {fileID: 301674658}
+    - {fileID: 361729455}
+    - {fileID: 361729457}
+    - {fileID: 361729456}
+    - {fileID: 2003695898, guid: 24414b22e761db5499d7bdb615e74a15, type: 3}
+    - {fileID: 361729458}
+    - {fileID: 11500000, guid: 74f072ea466a424f98360016c626bb43, type: 3}
+    - {fileID: 931533868}
+    - {fileID: 11500000, guid: 9b420afac9214910a1573c5bd75c2bb9, type: 3}
+    - {fileID: 931533867}
+    - {fileID: 1764374007}
+    - {fileID: 1764374006}
+    - {fileID: 1174216712}
+    - {fileID: 1174216711}
+    - {fileID: 361729459}
+    - {fileID: 931533864}
+    - {fileID: 931533865}
+    - {fileID: 931533866}
+    - {fileID: 21300000, guid: 3d28ba5df12de93459e7e549169775a1, type: 3}
+    - {fileID: 931533869}
+    - {fileID: 1764374003}
+    - {fileID: 1764374004}
+    - {fileID: 1764374005}
+    - {fileID: 1764374008}
+    - {fileID: 1552897120}
+    - {fileID: 1552897121}
+    - {fileID: 1552897122}
+    - {fileID: 1539623506}
+    - {fileID: 1539623507}
+    - {fileID: 1539623508}
+    - {fileID: 1905734192}
+    - {fileID: 1905734193}
+    - {fileID: 1905734194}
+    - {fileID: 1564918940}
+    - {fileID: 1564918941}
+    - {fileID: 1564918942}
+    - {fileID: 1169498985}
+    - {fileID: 1169498986}
+    - {fileID: 1169498987}
+    - {fileID: 893646687}
+    - {fileID: 893646688}
+    - {fileID: 893646689}
+    - {fileID: 1174216708}
+    - {fileID: 1174216709}
+    - {fileID: 1174216710}
+    - {fileID: 21300000, guid: 505d5b67e94944b4999909deb8bd35fe, type: 3}
+    - {fileID: 1174216713}
+    - {fileID: 1359559751}
+    - {fileID: 1359559752}
+    - {fileID: 1359559753}
+    - {fileID: 755078846}
+    - {fileID: 755078848}
+    - {fileID: 755078847}
+    - {fileID: 21300000, guid: 285b7f5855c83444d8c7749d9cce5b06, type: 3}
+    - {fileID: 726651153}
+    - {fileID: 726651154}
+    - {fileID: 726651155}
+    - {fileID: 1777899564}
+    - {fileID: 1777899565}
+    - {fileID: 1777899566}
+    - {fileID: 1692943219}
+    - {fileID: 1692943220}
+    - {fileID: 1692943221}
+    - {fileID: 1879113123}
+    - {fileID: 1879113124}
+    - {fileID: 1879113125}
+    - {fileID: 658286899}
+    - {fileID: 658286900}
+    - {fileID: 658286901}
+    - {fileID: 1632471560}
+    - {fileID: 1632471561}
+    - {fileID: 1632471562}
+    - {fileID: 1368960156}
+    - {fileID: 1368960157}
+    - {fileID: 1368960158}
+    - {fileID: 1571904332}
+    - {fileID: 1571904333}
+    - {fileID: 1571904334}
+    - {fileID: 2088192010}
+    - {fileID: 2088192011}
+    - {fileID: 2088192012}
+    - {fileID: 1697294846}
+    - {fileID: 1697294847}
+    - {fileID: 1697294848}
+    - {fileID: 1235792303}
+    - {fileID: 1235792304}
+    - {fileID: 1235792305}
+    - {fileID: 1451160355}
+    - {fileID: 1451160356}
+    - {fileID: 1451160357}
+    - {fileID: 503273849}
+    - {fileID: 503273850}
+    - {fileID: 503273851}
+    - {fileID: 1193228748, guid: 427ef7b833accf243b994145c14c8d23, type: 3}
+    - {fileID: 69439904}
+    - {fileID: 69439905}
+    - {fileID: 69439906}
+    - {fileID: 1760493682}
+    - {fileID: 1760493683}
+    - {fileID: 1760493684}
+    - {fileID: 1476937735}
+    - {fileID: 1476937736}
+    - {fileID: 1476937737}
+    - {fileID: 1850114041}
+    - {fileID: 1850114042}
+    - {fileID: 1850114043}
+    - {fileID: 867249334}
+    - {fileID: 867249335}
+    - {fileID: 867249336}
+    - {fileID: 284431456}
+    - {fileID: 284431457}
+    - {fileID: 284431458}
+    - {fileID: 1768678004}
+    - {fileID: 1768678005}
+    - {fileID: 1768678006}
+    - {fileID: 1540415318}
+    - {fileID: 1540415319}
+    - {fileID: 1540415320}
+    - {fileID: 268860436}
+    - {fileID: 268860437}
+    - {fileID: 268860438}
+    - {fileID: 957388568}
+    - {fileID: 957388569}
+    - {fileID: 957388570}
+    - {fileID: 1004385840}
+    - {fileID: 1004385841}
+    - {fileID: 1004385842}
+    - {fileID: 125125599}
+    - {fileID: 125125600}
+    - {fileID: 125125601}
+    - {fileID: 1922837325}
+    - {fileID: 1922837326}
+    - {fileID: 1922837327}
+    - {fileID: 856041770}
+    - {fileID: 856041771}
+    - {fileID: 856041772}
+    - {fileID: 1126166896}
+    - {fileID: 1126166897}
+    - {fileID: 1126166898}
+    - {fileID: 940155579}
+    - {fileID: 940155580}
+    - {fileID: 940155581}
+    - {fileID: 1226903368}
+    - {fileID: 1226903369}
+    - {fileID: 1226903370}
+    - {fileID: 1987819428}
+    - {fileID: 1987819429}
+    - {fileID: 1987819430}
+    - {fileID: 1814144821}
+    - {fileID: 1814144822}
+    - {fileID: 1814144823}
+    - {fileID: 1255422089}
+    - {fileID: 1255422090}
+    - {fileID: 1255422091}
+    - {fileID: 1939564913}
+    - {fileID: 1939564914}
+    - {fileID: 1939564915}
+    - {fileID: 1311411544}
+    - {fileID: 1311411545}
+    - {fileID: 1311411546}
+    - {fileID: 1891294499}
+    - {fileID: 1891294501}
+    - {fileID: 1891294500}
+    - {fileID: -2135971857, guid: 427ef7b833accf243b994145c14c8d23, type: 3}
+    - {fileID: 1857599829}
+    - {fileID: 1857599830}
+    - {fileID: 1857599832}
+    - {fileID: 1857599831}
+    - {fileID: 1857599834}
+    - {fileID: 1857599835}
+    - {fileID: 1857599837}
+    - {fileID: 1857599836}
+    - {fileID: 1175739677}
+    - {fileID: 1175739678}
+    - {fileID: 1175739682}
+    - {fileID: 1175739681}
+    - {fileID: 1175739680}
+    - {fileID: 1175739679}
+    - {fileID: 1407525717}
+    - {fileID: 1407525718}
+    - {fileID: 1407525720}
+    - {fileID: 1407525719}
+    - {fileID: 618901383}
+    - {fileID: 618901384}
+    - {fileID: 618901386}
+    - {fileID: 618901385}
+    - {fileID: 1504157552}
+    - {fileID: 1504157553}
+    - {fileID: 1504157555}
+    - {fileID: 1504157554}
+    - {fileID: 622891577}
+    - {fileID: 622891578}
+    - {fileID: 6680987}
+    - {fileID: 6680991}
+    - {fileID: 6680990}
+    - {fileID: 6680989}
+    - {fileID: 6680988}
+    - {fileID: 11500000, guid: f6e7c400839d421d9f516cb9449a1f23, type: 3}
+    - {fileID: 11400000, guid: 01ff00a76ac4a2541a1f49daaecaf103, type: 2}
+    - {fileID: 11500000, guid: 83f9da2f577f4109a8885490fd7d622c, type: 3}
+    - {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+    - {fileID: 2130885630}
+    - {fileID: 2130885634}
+    - {fileID: 2130885633}
+    - {fileID: 2130885632}
+    - {fileID: 2130885631}
+    - {fileID: 11400000, guid: fd8303c30388fb64094c429571d38cd5, type: 2}
+    - {fileID: 102900000, guid: 2be819263773f2340ba120f50cb5be3f, type: 3}
+    - {fileID: 433286976}
+    - {fileID: 433286980}
+    - {fileID: 433286979}
+    - {fileID: 433286978}
+    - {fileID: 433286977}
+    - {fileID: 11400000, guid: 21ad175ea83f32d47a4158ad2641b5d9, type: 2}
+    - {fileID: 102900000, guid: 01f766d6c1277be4f8b8d67de4bcb95a, type: 3}
+    - {fileID: 1108182448}
+    - {fileID: 1108182450}
+    - {fileID: 1108182449}
+    - {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
+    - {fileID: 1624300591}
+    - {fileID: 1624300594}
+    - {fileID: 1624300593}
+    - {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+    - {fileID: 1624300592}
+    - {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+    - {fileID: 1915013558}
+    - {fileID: 1915013562}
+    - {fileID: 1915013561}
+    - {fileID: 1915013560}
+    - {fileID: 1915013559}
+    - {fileID: 967429592}
+    - {fileID: 967429594}
+    - {fileID: 967429593}
+    - {fileID: -303508275, guid: f50c2bc8cf1941e44b02fe3699feb093, type: 3}
+    - {fileID: 844545347999074211}
+    - {fileID: 844545347999074271}
+    - {fileID: 844545347999074208}
+    - {fileID: 844545347999074209}
+    - {fileID: 844545347999074210}
+    - {fileID: 7601374271959358047}
+    - {fileID: 7601374271959358043}
+    - {fileID: 7601374271959358040}
+    - {fileID: 7601374271959358041}
+    - {fileID: 7601374271959358046}
+--- !u!4 &1331836096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331836093}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1359559751
 GameObject:
   m_ObjectHideFlags: 0
@@ -4526,6 +5044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1359559752}
   - component: {fileID: 1359559753}
+  - component: {fileID: 1359559754}
   m_Layer: 0
   m_Name: apple_golden_60x60px (1)
   m_TagString: Untagged
@@ -4600,6 +5119,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1359559754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359559751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 1
+  saveChildren: 0
+  componentsToSave: []
 --- !u!1 &1368960156
 GameObject:
   m_ObjectHideFlags: 0
@@ -6630,6 +7168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1539623507}
   - component: {fileID: 1539623508}
+  - component: {fileID: 1539623509}
   m_Layer: 0
   m_Name: apple_regular_60x60px (4)
   m_TagString: Untagged
@@ -6704,6 +7243,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1539623509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539623506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 1
+  saveChildren: 0
+  componentsToSave: []
 --- !u!1 &1540415318
 GameObject:
   m_ObjectHideFlags: 0
@@ -6798,6 +7356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1552897121}
   - component: {fileID: 1552897122}
+  - component: {fileID: 1552897123}
   m_Layer: 0
   m_Name: apple_regular_60x60px (2)
   m_TagString: Untagged
@@ -6872,6 +7431,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1552897123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552897120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 1
+  saveChildren: 0
+  componentsToSave: []
 --- !u!1 &1564918940
 GameObject:
   m_ObjectHideFlags: 0
@@ -6882,6 +7460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1564918941}
   - component: {fileID: 1564918942}
+  - component: {fileID: 1564918943}
   m_Layer: 0
   m_Name: apple_regular_60x60px (6)
   m_TagString: Untagged
@@ -6956,6 +7535,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1564918943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564918940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 1
+  saveChildren: 0
+  componentsToSave: []
 --- !u!1 &1571904332
 GameObject:
   m_ObjectHideFlags: 0
@@ -7665,6 +8263,7 @@ GameObject:
   - component: {fileID: 1764374007}
   - component: {fileID: 1764374006}
   - component: {fileID: 1764374008}
+  - component: {fileID: 1764374009}
   m_Layer: 0
   m_Name: apple_regular_60x60px
   m_TagString: Untagged
@@ -7801,6 +8400,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
+--- !u!114 &1764374009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764374003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 1
+  saveChildren: 0
+  componentsToSave: []
 --- !u!1 &1768678004
 GameObject:
   m_ObjectHideFlags: 0
@@ -12588,6 +13206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1905734193}
   - component: {fileID: 1905734194}
+  - component: {fileID: 1905734195}
   m_Layer: 0
   m_Name: apple_regular_60x60px (5)
   m_TagString: Untagged
@@ -12662,6 +13281,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1905734195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905734192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfcc9ceea0bf419cb3bcaf548c2600d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveLayer: 0
+  saveTag: 0
+  saveName: 0
+  saveHideFlags: 0
+  saveActive: 1
+  saveChildren: 0
+  componentsToSave: []
 --- !u!1 &1915013558
 GameObject:
   m_ObjectHideFlags: 0
