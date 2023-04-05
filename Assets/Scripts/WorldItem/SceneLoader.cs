@@ -13,9 +13,9 @@ namespace Infastructure
         {
             if (col.GetComponent<MainPlayerMovement>())
             {
-                OnSceneChange?.Invoke();
                 col.gameObject.transform.position = _positionPoint;
                 SceneManager.LoadScene(_scenes.Scene.name);
+                OnSceneChange?.Invoke();
             }
         }
         

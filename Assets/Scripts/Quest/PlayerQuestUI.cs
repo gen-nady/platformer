@@ -27,7 +27,7 @@ namespace Quest
         {
              _playerQuest.FirstOrDefault(_ => _.IdQuest == quest.Id)!.ChangeProgress(quest);
         }
-        private void SetInfoOrQuest(Quest quest)
+        public void SetInfoOrQuest(Quest quest)
         {
             var questPrefab = Instantiate(_playerQuestPrefab, _intantiatePosition);
             _playerQuest.Add(questPrefab);
@@ -36,7 +36,7 @@ namespace Quest
         private void ResetQuest(Quest quest)
         {
             var curQuest = _playerQuest.FirstOrDefault(_ => _.IdQuest == quest.Id)!;
-            Destroy(curQuest.gameObject);
+            curQuest. gameObject.SetActive(false);
             _playerQuest.Remove(curQuest);
         }
     }

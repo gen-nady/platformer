@@ -28,9 +28,24 @@ namespace Quest
         {
             if (_quests.Count > 0)
             {
-                var isActiveQuest = _playerQuest.IsQuestExist(_quests[0].Id);
-                _activeQuestPanel.SetActive(isActiveQuest);
-                _isActiveQuest = isActiveQuest;
+                for (int i = 0; i < _quests.Count; i++)
+                {
+                    if (_playerQuest.IsCompletedQuest(_quests[i].Id))
+                    {
+                        _quests.RemoveAt(i);
+                    }
+                    else
+                    {
+                        var isActiveQuest = _playerQuest.IsQuestExist(_quests[0].Id);
+                        _activeQuestPanel.SetActive(isActiveQuest);
+                        _isActiveQuest = isActiveQuest;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                _isAllQuest = true;
             }
         }
 

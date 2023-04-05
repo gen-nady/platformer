@@ -18,7 +18,7 @@ namespace ObjectToQuest.KillNPC
         private void Awake()
         {
             QuestGiver.AddQuestToPlayer += KillEnemy;
-            gameObject.SetActive(false);
+            gameObject.SetActive(_playerQuest.IsShowQuestObject(_idName));
         }
    
         private void OnDestroy()

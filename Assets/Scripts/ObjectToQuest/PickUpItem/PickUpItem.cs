@@ -18,7 +18,7 @@ namespace ObjectToQuest
         private void OnEnable()
         {
             QuestGiver.AddQuestToPlayer += EnableItem;
-            gameObject.SetActive(_playerQuest.IsQuestExist(_idName));
+            gameObject.SetActive(_playerQuest.IsShowQuestObject(_idName));
         }
         
         private void OnDestroy()

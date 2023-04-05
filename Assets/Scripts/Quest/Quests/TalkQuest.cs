@@ -8,18 +8,6 @@ namespace Quest
     {
         [SerializeField] private List<string> _npcText = null!;
         private QuestGiver _questGiver;
-        
-        #region MONO
-        private void OnEnable()
-        {
-            Reset();
-        }
-
-        private void OnDisable()
-        {
-            Reset();
-        }
-        #endregion
 
         public QuestGiver QuestGiver => _questGiver;
         
@@ -38,15 +26,14 @@ namespace Quest
             return _isComplete ?  $"Вы получили мудрую информацию от {_nameTarget}!" : $"Поговорите с  {_nameTarget}!";
         }
 
+        public override void ResetValue()
+        {
+            _isComplete = false;
+        }
+
         public void SetQuestGiver(QuestGiver questGiver)
         {
             _questGiver = questGiver;
-        }
-        
-        public override void Reset()
-        {
-            _isComplete = false;
-            _targetCount = 0;
         }
     }
 }
