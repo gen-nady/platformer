@@ -36,7 +36,7 @@ namespace WorldItem
             if (col.GetComponent<MainPlayerMovement>())
             {
                 if(_apples.Count == 0 || _apples.All(_ => !_.isActiveAndEnabled)) return;
-                _worldInfoUI.OpenButtonActionPanel(ShakeTree);
+                _worldInfoUI.OpenButtonActionPanel(ShakeTree, "Сбить");
             }
         }
 

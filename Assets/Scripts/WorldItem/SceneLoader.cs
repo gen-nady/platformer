@@ -13,8 +13,10 @@ namespace Infastructure
         public static event Action OnSceneChange;
         [SerializeField] private Scenes _scenes;
         [SerializeField] private Vector3 _positionPoint;
+        [SerializeField] private string _textButton;
+        private Transform _currentTransform;
         private WorldInfoUI _worldInfoUI;
-        
+       
         [Inject]
         private void Construct(WorldInfoUI worldInfoUI)
         {
@@ -25,9 +27,23 @@ namespace Infastructure
         {
             if (col.GetComponent<MainPlayerMovement>())
             {
-                col.gameObject.transform.position = _positionPoint;
-                StartCoroutine(LoadLevelAsync());
+                _currentTransform = col.gameObject.transform;
+                _worldInfoUI.OpenButtonActionPanel(OpenNewScene, _textButton);
             }
+        }
+
+        private void OnTriggerExit2D(Collider2D col)
+        {
+            if (col.GetComponent<MainPlayerMovement>())
+            {
+                _worldInfoUI.CloseButtonActionPanel();
+            }
+        }
+        
+        private void OpenNewScene()
+        {
+            _currentTransform.position = _positionPoint;
+            StartCoroutine(LoadLevelAsync());
         }
         
         private IEnumerator LoadLevelAsync()
@@ -41,6 +57,7 @@ namespace Infastructure
             }
             progress.allowSceneActivation = true;
             OnSceneChange?.Invoke();
+            _worldInfoUI.CloseButtonActionPanel();
             _worldInfoUI.CloseLoading();
         }
     }

@@ -12,6 +12,8 @@ namespace OtherItem
         [SerializeField] private TextMeshProUGUI _tableInfoText;
         [SerializeField] private GameObject _loadingPanel;
         [SerializeField] private Button _buttonAction;
+        [SerializeField] private TextMeshProUGUI _buttonText;
+        
         private void OnEnable()
         {
             SceneLoader.OnSceneChange += CloseTableInfoPanel;
@@ -43,9 +45,10 @@ namespace OtherItem
             _loadingPanel.SetActive(false);
         }
         
-        public void OpenButtonActionPanel(Action action)
+        public void OpenButtonActionPanel(Action action, string textButton)
         {
             _buttonAction.gameObject.SetActive(true);
+            _buttonText.text = textButton;
             _buttonAction.onClick.AddListener(() => action?.Invoke());
         }
         
