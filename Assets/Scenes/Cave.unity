@@ -11833,7 +11833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e7c400839d421d9f516cb9449a1f23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scenes: {fileID: 11400000, guid: 97bd3d0948d17514fa3ce1de22696566, type: 2}
+  _scenes: {fileID: 11400000, guid: 8ac28990129e4414ca82ba7d4f26928f, type: 2}
   _positionPoint: {x: -25, y: 7.5, z: 0}
   _textButton: "\u041F\u043E\u0434\u043D\u044F\u0442\u044C\u0441\u044F \u043D\u0430\u0432\u0435\u0440\u0445"
 --- !u!61 &910525371

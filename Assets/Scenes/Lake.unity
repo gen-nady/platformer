@@ -317,6 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scenes: {fileID: 11400000, guid: 7cfbc36e15a28f440947f4d141f20db4, type: 2}
   _positionPoint: {x: -25, y: 7.5, z: 0}
+  _textButton: 
 --- !u!61 &292973883
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -521,7 +522,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479760624}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.8, y: 2.1, z: 0}
+  m_LocalPosition: {x: 63.79, y: 2.1, z: 0}
   m_LocalScale: {x: 4, y: 35, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8735,6 +8736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scenes: {fileID: 11400000, guid: 62f5ba3156b09d741b0e8ccaf8854138, type: 2}
   _positionPoint: {x: -25, y: 7.5, z: 0}
+  _textButton: 
 --- !u!61 &825137066
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9637,7 +9639,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scenes: {fileID: 11400000, guid: 97bd3d0948d17514fa3ce1de22696566, type: 2}
-  _positionPoint: {x: -25, y: 7.5, z: 0}
+  _positionPoint: {x: -4, y: -7, z: 0}
+  _textButton: 
 --- !u!61 &1407008724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9724,7 +9727,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1407008722}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 77.06114, y: -7.679541, z: 9.665016}
+  m_LocalPosition: {x: 74.68, y: -7.679541, z: 9.665016}
   m_LocalScale: {x: 3, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10999,6 +11002,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scenes: {fileID: 11400000, guid: 8ac28990129e4414ca82ba7d4f26928f, type: 2}
   _positionPoint: {x: 11, y: 0.5, z: 0}
+  _textButton: 
 --- !u!61 &1689878071
 BoxCollider2D:
   m_ObjectHideFlags: 0
