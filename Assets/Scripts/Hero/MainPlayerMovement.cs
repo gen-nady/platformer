@@ -73,6 +73,7 @@ public class MainPlayerMovement : MonoBehaviour
     {
         if (isGrounded)
         {
+            _rb.velocity = new Vector2(_rb.velocity.x,0f);
             _rb.velocity = new Vector2(_rb.velocity.x,_jumpForce);
         }
     }
