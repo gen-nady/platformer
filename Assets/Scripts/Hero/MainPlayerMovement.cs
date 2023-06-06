@@ -17,8 +17,7 @@ public class MainPlayerMovement : MonoBehaviour
     
     private readonly Vector3 _rightScale = new Vector3(5, 5, 1);
     private readonly Vector3 _leftScale = new Vector3(-5, 5, 1);
-    private readonly int _idle = Animator.StringToHash("Idle");
-    private readonly int _move = Animator.StringToHash("Move");
+    private readonly int _speed = Animator.StringToHash("Speed");
 
     #region MONO
     private void Start()
@@ -49,28 +48,23 @@ public class MainPlayerMovement : MonoBehaviour
     private void Movement()
     {
         var moveVector = _inputService.Axis;
+        _animator.SetFloat(_speed, Mathf.Abs(moveVector));
         _rb.velocity = new Vector2(moveVector * _moveSpeed, _rb.velocity.y);
         if (moveVector > 0)
         {
             if(transform.localScale.x < 0)
                 transform.localScale = _rightScale;
-            //_spriteRenderer.flipX = false;
-            _animator.ResetTrigger(_idle);
-            _animator.SetTrigger(_move);
             _isIdle = false;
         }
         else if (moveVector < 0)
         {
             if(transform.localScale.x > 0)
                 transform.localScale = _leftScale;
-            _animator.ResetTrigger(_idle);
-            _animator.SetTrigger(_move);
             _isIdle = false;
         }
         else if (!_isIdle)
         {
-            _animator.ResetTrigger(_move);
-            _animator.SetTrigger(_idle);
+            Debug.Log(_rb.velocity.y);
             _isIdle = true;
         }
     }
@@ -79,7 +73,7 @@ public class MainPlayerMovement : MonoBehaviour
     {
         if (isGrounded)
         {
-            _rb.velocity =new Vector2(_rb.velocity.x,_jumpForce);
+            _rb.velocity = new Vector2(_rb.velocity.x,_jumpForce);
         }
     }
     
