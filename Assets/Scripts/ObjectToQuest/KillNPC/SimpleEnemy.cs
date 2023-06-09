@@ -7,6 +7,13 @@ namespace Hero.Attack
     public class SimpleEnemy : Enemy
     {
         [SerializeField] private int _lifePoints;
+
+        public override void AttackHero()
+        {
+            Debug.Log("Lower Helth");
+            gameObject.SetActive(false);
+        }
+        
         private void OnTriggerEnter2D(Collider2D col)
         {
             if (col.TryGetComponent<Attack>(out var attack))
@@ -19,7 +26,6 @@ namespace Hero.Attack
                     _playerQuest.EnemyKilled(_idName);
                     gameObject.SetActive(false);
                 }
-               
             }
         }
     }

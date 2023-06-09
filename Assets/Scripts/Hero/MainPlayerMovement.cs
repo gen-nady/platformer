@@ -18,7 +18,9 @@ public class MainPlayerMovement : MonoBehaviour
     private readonly Vector3 _rightScale = new Vector3(5, 5, 1);
     private readonly Vector3 _leftScale = new Vector3(-5, 5, 1);
     private readonly int _speed = Animator.StringToHash("Speed");
-
+    private readonly int _attack1 = Animator.StringToHash("Attack1");
+    private readonly int _attack2 = Animator.StringToHash("Attack2");
+    
     #region MONO
     private void Start()
     {
@@ -64,7 +66,6 @@ public class MainPlayerMovement : MonoBehaviour
         }
         else if (!_isIdle)
         {
-            Debug.Log(_rb.velocity.y);
             _isIdle = true;
         }
     }
@@ -73,6 +74,8 @@ public class MainPlayerMovement : MonoBehaviour
     {
         if (isGrounded)
         {
+            _animator.ResetTrigger(_attack1);
+            _animator.ResetTrigger(_attack2);
             _rb.velocity = new Vector2(_rb.velocity.x,0f);
             _rb.velocity = new Vector2(_rb.velocity.x,_jumpForce);
         }

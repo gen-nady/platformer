@@ -1,4 +1,5 @@
 ﻿using ObjectToQuest;
+using ObjectToQuest.KillNPC;
 using OtherItem;
 using UnityEngine;
 
@@ -23,6 +24,12 @@ namespace Hero
             if (other.TryGetComponent<TableInfo>(out var table))
             {
                 table.ShowText();
+                return;
+            }
+            
+            if (other.TryGetComponent<Enemy>(out var enemy))
+            {
+                enemy.AttackHero();
                 return;
             }
         }

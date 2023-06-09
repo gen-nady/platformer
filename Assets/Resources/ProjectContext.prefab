@@ -5283,7 +5283,7 @@ GameObject:
   - component: {fileID: 8709252890781067819}
   - component: {fileID: 8709252890781067818}
   - component: {fileID: 8709252891105148643}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
