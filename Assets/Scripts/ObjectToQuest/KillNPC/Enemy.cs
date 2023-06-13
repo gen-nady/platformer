@@ -1,18 +1,18 @@
-﻿using Hero;
+﻿using System;
+using Hero;
 using Hero.Attack;
 using Quest;
 using UnityEngine;
 using Zenject;
 
-namespace ObjectToQuest.KillNPC
+namespace ObjectToQuest
 {
     public abstract class Enemy : MonoBehaviour
     {
-        [SerializeField] private bool _isExistQuest;
         [SerializeField] protected string _idName;
         [SerializeField] private int _lifePoints;
         [SerializeField] private float _attackHealth;
-        protected PlayerQuest _playerQuest;
+        private PlayerQuest _playerQuest;
 
         [Inject]
         private void Construct(PlayerQuest playerQuest)
@@ -23,7 +23,7 @@ namespace ObjectToQuest.KillNPC
         #region MONO
         private void Awake()
         {
-            if (_isExistQuest)
+            if (_idName != string.Empty)
             {
                 QuestGiver.AddQuestToPlayer += KillEnemy;
                 gameObject.SetActive(_playerQuest.IsShowQuestObject(_idName)); 
@@ -32,7 +32,7 @@ namespace ObjectToQuest.KillNPC
    
         private void OnDestroy()
         {
-            if (_isExistQuest)
+            if (_idName != string.Empty)
             {
                 QuestGiver.AddQuestToPlayer -= KillEnemy;
             }
@@ -43,8 +43,10 @@ namespace ObjectToQuest.KillNPC
             if (col.TryGetComponent<Attack>(out var attack))
             {
                 _lifePoints -= attack.Damage;
-                if(attack is FireballAttack)
+                if (attack is FireballAttack)
+                {
                     Destroy(attack.gameObject);
+                }
                 if (_lifePoints <= 0)
                 {
                     _playerQuest.EnemyKilled(_idName);
@@ -54,7 +56,7 @@ namespace ObjectToQuest.KillNPC
         }
         #endregion        
           
-        public abstract void AttackHero();
+        public abstract void TakeDamage();
         
         private void KillEnemy(Quest.Quest quest)
         {

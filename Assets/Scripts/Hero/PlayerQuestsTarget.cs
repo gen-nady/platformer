@@ -1,5 +1,4 @@
 ﻿using ObjectToQuest;
-using ObjectToQuest.KillNPC;
 using OtherItem;
 using UnityEngine;
 
@@ -27,9 +26,9 @@ namespace Hero
                 return;
             }
             
-            if (other.TryGetComponent<Enemy>(out var enemy))
+            if (other.TryGetComponent<ObjectToQuest.Enemy>(out var enemy))
             {
-                enemy.AttackHero();
+                enemy.TakeDamage();
                 return;
             }
         }
