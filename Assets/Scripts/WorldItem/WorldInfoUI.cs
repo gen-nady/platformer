@@ -8,12 +8,15 @@ namespace OtherItem
 {
     public class WorldInfoUI : MonoBehaviour
     {
+        [Header("Table Info")]
         [SerializeField] private GameObject _tableInfoPanel;
         [SerializeField] private TextMeshProUGUI _tableInfoText;
+        [Header("Loading Panel")]
         [SerializeField] private GameObject _loadingPanel;
+        [Header("Other Item")]
         [SerializeField] private Button _buttonAction;
         [SerializeField] private TextMeshProUGUI _buttonText;
-        
+
         private void OnEnable()
         {
             SceneLoader.OnSceneChange += CloseTableInfoPanel;

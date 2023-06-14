@@ -1,6 +1,7 @@
 ﻿using System;
 using Quest;
 using UnityEngine;
+using WorldItem;
 using Zenject;
 
 namespace ObjectToQuest
@@ -18,13 +19,14 @@ namespace ObjectToQuest
 
         protected virtual void OnEnable()
         {
-            QuestGiver.AddQuestToPlayer += EnableItem;
             if(_idName == string.Empty) return;
+            QuestGiver.AddQuestToPlayer += EnableItem;
             gameObject.SetActive(_playerQuest.IsShowQuestObject(_idName));
         }
         
         protected virtual void OnDestroy()
         {
+            if(_idName == string.Empty) return;
             QuestGiver.AddQuestToPlayer -= EnableItem;
         }
         
@@ -33,7 +35,7 @@ namespace ObjectToQuest
             if(quest.Id == _idName)
                 gameObject.SetActive(true);
         }
-        
+
         public abstract void PickUp();
     }
 }
