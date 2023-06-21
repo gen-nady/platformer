@@ -1,6 +1,6 @@
 ﻿namespace Hero.Attack
 {
-    public class SwordAttack1 : Attack
+    public class SecondComboSwordAttack : Attack
     {
         
     }

@@ -823,6 +823,7 @@ GameObject:
   - component: {fileID: 1114446606307172294}
   - component: {fileID: 4997991111918278207}
   - component: {fileID: 4270481203667740412}
+  - component: {fileID: 157026726502873397}
   m_Layer: 0
   m_Name: Attack1
   m_TagString: Untagged
@@ -884,6 +885,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 2
+--- !u!50 &157026726502873397
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106063285774920582}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1195387874006664948
 GameObject:
   m_ObjectHideFlags: 0
@@ -4665,6 +4687,7 @@ GameObject:
   - component: {fileID: 1770519045280449303}
   - component: {fileID: 8833032801241911688}
   - component: {fileID: 1878440492420303830}
+  - component: {fileID: 3629159687433427091}
   m_Layer: 0
   m_Name: Attack2
   m_TagString: Untagged
@@ -4726,6 +4749,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 4
+--- !u!50 &3629159687433427091
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5575331999526608890}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6670828263933851793
 GameObject:
   m_ObjectHideFlags: 0

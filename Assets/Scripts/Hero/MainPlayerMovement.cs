@@ -8,7 +8,9 @@ public class MainPlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private float _moveSpeed = 5f;
     [SerializeField] private float _jumpForce = 10f;
- 
+
+    private bool _isLadder;
+    
     private Animator _animator;
     private Rigidbody2D _rb;
     private IInputService _inputService;
@@ -31,13 +33,17 @@ public class MainPlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space) && !_isLadder)
             Jump();
     }
 
     private void FixedUpdate()
     {
         Movement();
+        if (_isLadder)
+        {
+            MovementLader();
+        }
     }
     
     private void OnDrawGizmos()
@@ -82,4 +88,23 @@ public class MainPlayerMovement : MonoBehaviour
     }
     
     private bool isGrounded => Physics2D.OverlapCircle(_groundCheck.position, GroundRadius, _groundLayer);
+
+    public void SetLadder(bool isLadder)
+    {
+        _isLadder = isLadder;
+    }
+    
+    private void MovementLader()
+    {
+        _rb.velocity = new Vector2(_rb.velocity.x, 0.85f);
+        if (Input.GetKey(KeyCode.W))
+        {
+            _rb.velocity = new Vector2(0, 10);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            _rb.velocity = new Vector2(0, -10);
+        }
+       
+    }
 }

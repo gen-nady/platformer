@@ -45,12 +45,14 @@ namespace ObjectToQuest
                 _lifePoints -= attack.Damage;
                 if (attack is FireballAttack)
                 {
+                    Debug.Log("УБИЛО!!");
                     Destroy(attack.gameObject);
                 }
                 if (_lifePoints <= 0)
                 {
                     _playerQuest.EnemyKilled(_idName);
                     gameObject.SetActive(false);
+                    Debug.Log("УБИЛО!!");
                 }
             }
         }
