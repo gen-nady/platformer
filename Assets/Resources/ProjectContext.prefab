@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64cdc59c5fa1443d8166070c8a709a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _floatingJoystick: {fileID: 8785286645719843622}
   _coolDownButton: {fileID: 615212207932973603}
   _coolDownImage: {fileID: 615212208344518364}
   _coolDownText: {fileID: 615212208134856004}
@@ -2576,7 +2577,7 @@ MonoBehaviour:
   _questGiverUI: {fileID: 4621864297506181829}
   _worldInfoUI: {fileID: 5183596500128867980}
   _talkQuestUI: {fileID: 2731738874600789870}
-  _heroAttackUI: {fileID: 615212207454083737}
+  mainPlayerUI: {fileID: 615212207454083737}
 --- !u!1 &4419307096274679366
 GameObject:
   m_ObjectHideFlags: 0

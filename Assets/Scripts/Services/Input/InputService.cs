@@ -2,16 +2,16 @@
 {
     public abstract class InputService : IInputService
     {
-        public abstract float Axis { get; }
-        protected const string Horizontal = "Horizontal";
-        private readonly FloatingJoystick _floatingJoystick;
+        public abstract float HorizontalAxis { get; }
+        public abstract float VerticalAxis { get; }
+        protected const string HORIZONTAL = "Horizontal";
+        
+        protected const string VERTICAL = "Vertical";
+        protected readonly FloatingJoystick _floatingJoystick;
         
         protected InputService(FloatingJoystick joystick)
         {
             _floatingJoystick = joystick;
         }
-        
-        protected float JoystickAxis()
-            => _floatingJoystick.Horizontal;
     }
 }
