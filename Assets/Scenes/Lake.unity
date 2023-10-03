@@ -21855,7 +21855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scenes: {fileID: 11400000, guid: 8ac28990129e4414ca82ba7d4f26928f, type: 2}
-  _positionPoint: {x: 15, y: -2, z: 0}
+  _positionPoint: {x: 24.6, y: 10, z: 0}
   _textButton: "\u043F\u0440\u044B\u0433"
 --- !u!61 &1689878071
 BoxCollider2D:
