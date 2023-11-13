@@ -20,9 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FisherHouse.unity
     guid: 08d5fecc16977c646b64865002255be5
-  - enabled: 1
-    path: Assets/Scenes/LVL_Waterfall.unity
-    guid: c5df3485917139a43a7289d080ee5146
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Village.unity
     guid: 10c6fee1bdced2a44a0857e80ab08075

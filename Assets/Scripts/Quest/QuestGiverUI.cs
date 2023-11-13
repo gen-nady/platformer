@@ -1,9 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Text;
+using Cysharp.Threading.Tasks;
 using Infastructure;
+using Newtonsoft.Json;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 namespace Quest
 {
@@ -25,10 +32,20 @@ namespace Quest
             SceneLoader.OnSceneChange += CloseQuestPanel;
         }
 
-        private void OnDisable()
+        private async void OnDisable()
         {
             SceneLoader.OnSceneChange -= CloseBonusesPanel;
             SceneLoader.OnSceneChange -= CloseQuestPanel;
+            var res = await PostAsync<Object,Object>(String.Empty, new Object());
+        }
+
+        public async UniTask<TResponse> PostAsync<TRequest, TResponse>(string domain, TRequest requestObject)
+        {
+            var _client = new HttpClient();
+            var response = await _client.PostAsync($"{domain}",
+                new StringContent(JsonConvert.SerializeObject(requestObject), Encoding.UTF8, "application/json"));
+            var responseBody = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<TResponse>(responseBody);
         }
 
         public void SetQuestText(Quest quest, Action agreeAction)

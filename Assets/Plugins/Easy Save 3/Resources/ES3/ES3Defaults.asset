@@ -34,6 +34,14 @@ MonoBehaviour:
     - Assembly-CSharp-firstpass
     - Cinemachine
     - PsdPlugin
+    - UniRx
+    - UniRx.Examples
+    - UniTask
+    - UniTask.Addressables
+    - UniTask.DOTween
+    - UniTask.Editor
+    - UniTask.Linq
+    - UniTask.TextMeshPro
     - Zenject
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
