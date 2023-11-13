@@ -6,18 +6,7 @@
         {
         }
         
-        public override float Axis
-        {
-            get
-            {
-                var axis = JoystickAxis();
-                if (axis == 0f)
-                    axis = UnityAxis();
-                return axis;
-            }
-        }
-
-        private float UnityAxis()
-            => UnityEngine.Input.GetAxis(Horizontal);
+        public override float HorizontalAxis => UnityEngine.Input.GetAxis(HORIZONTAL);
+        public override float VerticalAxis => UnityEngine.Input.GetAxis(VERTICAL);
     }
 }

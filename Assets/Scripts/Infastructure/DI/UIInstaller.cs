@@ -2,6 +2,7 @@
 using OtherItem;
 using Quest;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace Infastructure
@@ -12,7 +13,7 @@ namespace Infastructure
         [SerializeField] private QuestGiverUI _questGiverUI; 
         [SerializeField] private WorldInfoUI _worldInfoUI;
         [SerializeField] private TalkQuestUI _talkQuestUI;
-        [SerializeField] private HeroAttackUI _heroAttackUI;
+        [SerializeField] private MainPlayerUI mainPlayerUI;
         
         public override void InstallBindings()
         {
@@ -20,7 +21,7 @@ namespace Infastructure
             Container.Bind<QuestGiverUI>().FromInstance(_questGiverUI).AsSingle();  
             Container.Bind<WorldInfoUI>().FromInstance(_worldInfoUI).AsSingle();
             Container.Bind<TalkQuestUI>().FromInstance(_talkQuestUI).AsSingle();
-            Container.Bind<HeroAttackUI>().FromInstance(_heroAttackUI).AsSingle();
+            Container.Bind<MainPlayerUI>().FromInstance(mainPlayerUI).AsSingle();
         }
     }
 }

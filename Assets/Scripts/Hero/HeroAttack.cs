@@ -12,7 +12,7 @@ namespace Hero
         [SerializeField] private float _timerToCombo;
         [SerializeField] private float _delaySwordAttack;
         
-        private HeroAttackUI _heroAttackUI;
+        private MainPlayerUI mainPlayerUI;
         private Transform _transform;
         private Animator _animator;
         private float _currentDelaySwordAttack;
@@ -23,9 +23,9 @@ namespace Hero
         private readonly int _attack2 = Animator.StringToHash("Attack2");
 
         [Inject]
-        private void Construct(HeroAttackUI heroAttackUI)
+        private void Construct(MainPlayerUI mainPlayerUI)
         {
-            _heroAttackUI = heroAttackUI;
+            this.mainPlayerUI = mainPlayerUI;
         }
         
         private void Awake()
@@ -53,7 +53,7 @@ namespace Hero
             var position = new Vector3(positionHero.x, positionHero.y, _orderInLayer);
             var fireball = Instantiate(_fireball, position, Quaternion.identity);
             fireball.SetDirection(_transform.localScale.x > 0 ? Vector2.right : Vector2.left);
-            _heroAttackUI.StartCooldDown(fireball.CoolDown);
+            mainPlayerUI.StartCooldDown(fireball.CoolDown);
         }
         
         public void SwordAttack()

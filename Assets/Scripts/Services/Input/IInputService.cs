@@ -2,6 +2,7 @@
 {
     public interface IInputService
     {
-        float Axis { get; }
+        float HorizontalAxis { get; }
+        float VerticalAxis { get; }
     }
 }

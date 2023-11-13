@@ -1,9 +1,12 @@
+using System;
 using Infastructure;
 using Services.Input;
 using UnityEngine;
 
 public class MainPlayerMovement : MonoBehaviour
 {
+    public static event Action<bool> OnLadderState;
+    
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private float _moveSpeed = 5f;
@@ -42,7 +45,7 @@ public class MainPlayerMovement : MonoBehaviour
         Movement();
         if (_isLadder)
         {
-            MovementLader();
+            MovementLadder();
         }
     }
     
@@ -55,7 +58,8 @@ public class MainPlayerMovement : MonoBehaviour
 
     private void Movement()
     {
-        var moveVector = _inputService.Axis;
+        var moveVector = _inputService.HorizontalAxis;
+        Debug.Log(moveVector);
         _animator.SetFloat(_speed, Mathf.Abs(moveVector));
         _rb.velocity = new Vector2(moveVector * _moveSpeed, _rb.velocity.y);
         if (moveVector > 0)
@@ -92,19 +96,16 @@ public class MainPlayerMovement : MonoBehaviour
     public void SetLadder(bool isLadder)
     {
         _isLadder = isLadder;
+        OnLadderState?.Invoke(_isLadder);
     }
     
-    private void MovementLader()
+    private void MovementLadder()
     {
         _rb.velocity = new Vector2(_rb.velocity.x, 0.85f);
-        if (Input.GetKey(KeyCode.W))
+        var moveVector = _inputService.VerticalAxis;
+        if (moveVector != 0)
         {
-            _rb.velocity = new Vector2(0, 10);
+            _rb.velocity = new Vector2(_rb.velocity.x, moveVector * _moveSpeed);
         }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            _rb.velocity = new Vector2(0, -10);
-        }
-       
     }
 }

@@ -1,12 +1,15 @@
 ﻿using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Hero
 {
-    public class HeroAttackUI : MonoBehaviour
+    public class MainPlayerUI : MonoBehaviour
     {
+        [SerializeField] private FloatingJoystick _floatingJoystick;
+        [Header("Attack")]
         [SerializeField] private Button _coolDownButton;
         [SerializeField] private Image _coolDownImage;
         [SerializeField] private TextMeshProUGUI _coolDownText;
@@ -14,7 +17,17 @@ namespace Hero
         private float _coolDown;
         private float _currentCoolDown;
         private bool _isCoolDown;
-        
+
+        private void OnEnable()
+        {
+            MainPlayerMovement.OnLadderState += ChangeJoystick;
+        }
+
+        private void OnDisable()
+        {
+            MainPlayerMovement.OnLadderState -= ChangeJoystick;
+        }
+
         private void Update()
         {
             if (_isCoolDown)
@@ -43,6 +56,11 @@ namespace Hero
             _coolDownImage.gameObject.SetActive(true);
             _coolDownImage.fillAmount = 0f;
             _coolDownText.text = 0.ToString();
+        }
+
+        private void ChangeJoystick(bool isFreeMove)
+        {
+            _floatingJoystick.AxisOptions = isFreeMove ? AxisOptions.Both : AxisOptions.Horizontal;
         }
     }
 }
