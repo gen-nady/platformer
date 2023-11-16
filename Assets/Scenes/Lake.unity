@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 155862476}
   - component: {fileID: 155862479}
   - component: {fileID: 155862478}
-  - component: {fileID: 155862477}
+  - component: {fileID: 155862480}
   m_Layer: 0
   m_Name: Frog (3)
   m_TagString: Untagged
@@ -185,23 +185,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1523423809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &155862477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155862475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b5f2ef544ec4d84ab996795112c48f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isExistQuest: 0
-  _idName: 
-  _lifePoints: 0
-  _attackHealth: 0
-  _lifePoints: 0
 --- !u!61 &155862478
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -300,6 +283,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &155862480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155862475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54dfc1f4f315436ea2a55e0dc25ed7e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _idName: 
+  _lifePoints: 5
+  _attackHealth: 3
 --- !u!1 &166665036
 GameObject:
   m_ObjectHideFlags: 0
@@ -18787,7 +18785,7 @@ MonoBehaviour:
   openPrefabs: 0
   prefabs: []
   idRef:
-    _Keys: 8b03b28f95016e2f9a1274c1e536251c6913ac891749f07976da575f5afe9710ac170f1f003fc164b6a91febc9e24e1a5a9e290b25ffcd40ecc7e64556f02a657c06e91d0f9b205a5b8d9ac9b6b5517e849b9203babbe2582aef2c92d6fb4f6c8d3c05bbd58bea53052a5515a1aae147e54f3339587c0e59393d8cff8a75c628d5856f647451d415cae398a8352a8500818236152b60160e777ad292f6e63a0f7a1ae195775700521f2d98a4954b1f3a980fc4acaa2ad7456542c1deaa7b6344c17eeb5a6f3f9d2983e3f6fec771793c990cfae7218d645c0ed80546e721036691dde41660c5ca285311d171de29f3284501bb627f83dc4e1cb897b7ba1bef5c18a29116729d235fd72239335ed63b37a1deb7e4eab3bc5634d274172399190c019633185d82e36efed2767e44f6641ddae5c55d42ef524583a014726ff9804dbc9e1709d03bbc5afb57cb739f430c2ac96d0ef7a088b10fea7895bd6d70fe07ae3c3e5a21a4b261d794a86544391a3f6c15c423f8881133ed07f249d179c776a63b399cfa4df66d206fcd35301654505f5629833421ff354e71472996fc3250a3e1f37f8c49c51ee2a9fd774424fc294d5d57d85cb555373b6fe96c951f031ca21d924f23d4c3571c48a18a2488f0298ae123c75ba50c58c9d5bce3a0a67601ae191962b64c4c2022afbc1413ca123ba0ed1e4c03c33e03f0c6e8076e590875d3a0dd0a6f8e73282e43e90a62216c023d7ebc4c77d6021624ea8c109cbb4d37a7474172ed07cb117af57a47ac486510cd15bb12eaaa13575d0cd0a5e57c3a73f6b1b1a962dfef444acdc66c5149c26db063bc7900c4b251a5662f06278e090931ee3d5dfa0f73112676c71ce3a605148ac9a12397d46760b79caab7c64b8c459cfdfc035016e343b5d94c6ab8767e33c3bd9c3f8620675ff1ab9f768ccf3501601bbcc439c0cf1b9e083e02ec903e3c590b592609c68d29dcbc543a7137bf25fcf539e453e94633908863a45978920e38059b932c588203ed81a07ee264727eebdcd097285c0a659679791cdd5bb863726c37bc7814374bc10acae7f5ab100178aac677daf0b8687e4531d04522a36b0f000599903f7b02b9ebbcd7998a886a132edf816a6d747eb5cf3f33e367051bad35d8f5a577704927c930c6ac900208862e5f7a27fb0552ce9be3740224d65d8b874d5f7eafe5201027d59c4d6c3a63436958cc62c5d423cd3765478490192d0c35691e2911ca2aaf51b784ba66ba619f80cd6734f50450a58fd34aead25a7e0fa8a882d6598d5334821d100e50686683fb19fba27f9e163018c2b8e4141423f7387612be388b07f2df6448eceaa154d993321914aadf7247beb3ee1b463848984019d5d955a8448720ec81e3e7031bba16df51e2fa0e5ee81633007b63145459e44e532e34852ec5896d0b42a1712d3d3057cdda75d46db187420f77564023f467d7006750127a6f4fe99498e55e76799f3db5f3b9861cf11e5d580e8a481bca9018dbc970c572bd2ec3d6a097fa691b4777e96b0ae8391e44f0b60d45941b08ceca07cd82ac07dbcbf9c4f6af7c59db0bc138eda05040a8defa0e617c7f023d21302e330d64689b700fa011244331c149da02845b2d58200b5fee889da65d4cf60117e0aa8d3155f44a192210f63975d532e5b7521140ff1b84f1f6874331fe9238718a64ea03a758d35eb0f1527c9bc9cfab5782861ef3d84d3f6c52f103354eabe5ddd3af6b29f3a4d37830581069620b46e1468450e51fb1123bb53d4ba223ab403105f936901cf44608336254992fd79eb993616e87c47d9c224c5a24315d9d48a7b0d130ab8baa3e21969c5caa06c4b7a646a9358519b96c875c13433f2fea5569e65248fef80cd117ddb31e9f250de4775c82154c983c72099b5707a0ed00f2ac46f36fa7f24751c628e157669b0bad6af7ba1eadd50ad0aadf3f66b1ec8efb225a3557339e3d8515314e23
+    _Keys: 8b03b28f95016e2f9a1274c1e536251c6913ac891749f07976da575f5afe9710ac170f1f003fc164b6a91febc9e24e1a5a9e290b25ffcd40ecc7e64556f02a657c06e91d0f9b205a5b8d9ac9b6b5517e849b9203babbe2582aef2c92d6fb4f6c8d3c05bbd58bea53052a5515a1aae147e54f3339587c0e59393d8cff8a75c628d5856f647451d415cae398a8352a8500818236152b60160e777ad292f6e63a0f7a1ae195775700521f2d98a4954b1f3a980fc4acaa2ad7456542c1deaa7b6344c17eeb5a6f3f9d2983e3f6fec771793c990cfae7218d645c0ed80546e721036691dde41660c5ca285311d171de29f3284501bb627f83dc4e1cb897b7ba1bef5c18a29116729d235fd72239335ed63b37a1deb7e4eab3bc5634d274172399190c019633185d82e36efed2767e44f6641ddae5c55d42ef524583a014726ff9804dbc9e1709d03bbc5afb57cb739f430c2ac96d0ef7a088b10fea7895bd6d70fe07ae3c3e5a21a4b261d794a86544391a3f6c15c423f8881133ed07f249d179c776a63b399cfa4df66d206fcd35301654505f5629833421ff354e71472996fc3250a3e1f37f8c49c51ee2a9fd774424fc294d5d57d85cb555373b6fe96c951f031ca21d924f23d4c3571c48a18a2488f0298ae123c75ba50c58c9d5bce3a0a67601ae191962b64c4c2022afbc1413ca123ba0ed1e4c03c33e03f0c6e8076e590875d3a0dd0a6f8e73282e43e90a62216c023d7ebc4c77d6021624ea8c109cbb4d37a7474172ed07cb117af57a47ac486510cd15bb12eaaa13575d0cd0a5e57c3a73f6b1b1a962dfef444acdc66c5149c26db063bc7900c4b251a5662f06278e090931ee3d5dfa0f73112676c71ce3a605148ac9a12397d46760b79caab7c64b8c459cfdfc035016e343b5d94c6ab8767e33c3bd9c3f8620675ff1ab9f768ccf3501601bbcc439c0cf1b9e083e02ec903e3c590b592609c68d29dcbc543a7137bf25fcf539e453e94633908863a45978920e38059b932c588203ed81a07ee264727eebdcd097285c0a659679791cdd5bb863726c37bc7814374bc10acae7f5ab100178aac677daf0b8687e4531d04522a36b0f000599903f7b02b9ebbcd7998a886a132edf816a6d747eb5cf3f33e367051bad35d8f5a577704927c930c6ac900208862e5f7a27fb0552ce9be3740224d65d8b874d5f7eafe5201027d59c4d6c3a63436958cc62c5d423cd3765478490192d0c35691e2911ca2aaf51b784ba66ba619f80cd6734f50450a58fd34aead25a7e0fa8a882d6598d5334821d100e50686683fb19fba27f9e163018c2b8e4141423f7387612be388b07f2df6448eceaa154d993321914aadf7247beb3ee1b463848984019d5d955a8448720ec81e3e7031bba16df51e2fa0e5ee81633007b63145459e44e532e34852ec5896d0b42a1712d3d3057cdda75d46db187420f77564023f467d7006750127a6f4fe99498e55e76799f3db5f3b9861cf11e5d580e8a481bca9018dbc970c572bd2ec3d6a097fa691b4777e96b0ae8391e44f0b60d45941b08ceca07cd82ac07dbcbf9c4f6af7c59db0bc138eda05040a8defa0e617c7f023d21302e330d64689b700fa011244331c149da02845b2d58200b5fee889da65d4cf60117e0aa8d3155f44a192210f63975d532e5b7521140ff1b84f1f6874331fe9238718a64ea03a758d35eb0f1527c9bc9cfab5782861ef3d84d3f6c52f103354eabe5ddd3af6b29f3a4d37830581069620b46e1468450e51fb1123bb53d4ba223ab403105f936901cf44608336254992fd79eb993616e87c47d9c224c5a24315d9d48a7b0d130ab8baa3e21969c5caa06c4b7a646a9358519b96c875c13433f2fea5569e65248fef80cd117ddb31e9f250de4775c82154c983c72099b5707a0ed00f2ac46f36fa7f24751c628e157669b0bad6af7ba1eadd50ad0aadf3f66b1ec8efb225a3557339e3d8515314e23cf324c63ddef2e389795ea27818f2f0e2565f1283614872fed9225d8e8f853660871f84e8a58583b
     _Values:
     - {fileID: 1579243698}
     - {fileID: 1579243699}
@@ -18965,6 +18963,11 @@ MonoBehaviour:
     - {fileID: 1141056055}
     - {fileID: 1141056054}
     - {fileID: -895051282, guid: 8bc40a08bc163e54da547e08ad217e8c, type: 3}
+    - {fileID: 1674845383}
+    - {fileID: 11500000, guid: 54dfc1f4f315436ea2a55e0dc25ed7e0, type: 3}
+    - {fileID: 824767538}
+    - {fileID: 1868366178}
+    - {fileID: 155862480}
 --- !u!4 &727216953
 Transform:
   m_ObjectHideFlags: 0
@@ -18991,7 +18994,7 @@ GameObject:
   - component: {fileID: 824767534}
   - component: {fileID: 824767537}
   - component: {fileID: 824767536}
-  - component: {fileID: 824767535}
+  - component: {fileID: 824767538}
   m_Layer: 0
   m_Name: Frog (1)
   m_TagString: Untagged
@@ -19014,23 +19017,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1523423809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &824767535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824767533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b5f2ef544ec4d84ab996795112c48f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isExistQuest: 0
-  _idName: 
-  _lifePoints: 0
-  _attackHealth: 0
-  _lifePoints: 0
 --- !u!61 &824767536
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19129,6 +19115,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &824767538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824767533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54dfc1f4f315436ea2a55e0dc25ed7e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _idName: 
+  _lifePoints: 5
+  _attackHealth: 3
 --- !u!1 &825137064
 GameObject:
   m_ObjectHideFlags: 0
@@ -22082,7 +22083,7 @@ GameObject:
   - component: {fileID: 1674845380}
   - component: {fileID: 1674845379}
   - component: {fileID: 1674845382}
-  - component: {fileID: 1674845381}
+  - component: {fileID: 1674845383}
   m_Layer: 0
   m_Name: Frog
   m_TagString: Untagged
@@ -22157,23 +22158,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1523423809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1674845381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1674845378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b5f2ef544ec4d84ab996795112c48f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isExistQuest: 0
-  _idName: 
-  _lifePoints: 0
-  _attackHealth: 0
-  _lifePoints: 0
 --- !u!61 &1674845382
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22220,6 +22204,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.13, y: 0.09}
   m_EdgeRadius: 0
+--- !u!114 &1674845383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674845378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54dfc1f4f315436ea2a55e0dc25ed7e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _idName: 
+  _lifePoints: 5
+  _attackHealth: 3
 --- !u!1 &1685698654
 GameObject:
   m_ObjectHideFlags: 0
@@ -29111,7 +29110,7 @@ GameObject:
   - component: {fileID: 1868366174}
   - component: {fileID: 1868366177}
   - component: {fileID: 1868366176}
-  - component: {fileID: 1868366175}
+  - component: {fileID: 1868366178}
   m_Layer: 0
   m_Name: Frog (2)
   m_TagString: Untagged
@@ -29134,23 +29133,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1523423809}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1868366175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1868366173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b5f2ef544ec4d84ab996795112c48f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isExistQuest: 0
-  _idName: 
-  _lifePoints: 0
-  _attackHealth: 0
-  _lifePoints: 0
 --- !u!61 &1868366176
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29249,6 +29231,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1868366178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868366173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54dfc1f4f315436ea2a55e0dc25ed7e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _idName: 
+  _lifePoints: 5
+  _attackHealth: 3
 --- !u!1 &1885375291
 GameObject:
   m_ObjectHideFlags: 0
@@ -30477,7 +30474,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.74183196, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -30487,7 +30484,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.4836636, y: 1}
   m_EdgeRadius: 0
 --- !u!1001 &3418611161736038584
 PrefabInstance:

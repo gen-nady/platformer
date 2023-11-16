@@ -38,7 +38,7 @@ namespace ObjectToQuest
         private void OnCollisionEnter2D(Collision2D col)
         {
             if(_isDetectedCollision) return;
-            if (col.gameObject.GetComponent<Wall>())
+            if (col.gameObject.GetComponent<Ground>())
             {
                 _isDetectedCollision = true;
                 _rigibody.velocity = Vector2.zero;
