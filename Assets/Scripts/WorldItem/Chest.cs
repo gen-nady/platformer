@@ -11,7 +11,7 @@ namespace WorldItem
     {
         [SerializeField] private Animator _animator;
         [SerializeField] private List<ChestPickUpItem> _chestItems;
-        private const string _nameButton = "Открыть сундук";
+        private const string NAME_BUTTON = "Открыть сундук";
         private bool _isOpen;
         private WorldInfoUI _worldInfoUI;
         private readonly int _onOpen = Animator.StringToHash("OnOpen");
@@ -28,7 +28,7 @@ namespace WorldItem
             
             if (col.GetComponent<MainPlayerMovement>())
             {
-                _worldInfoUI.OpenButtonActionPanel(OpenChest, _nameButton);
+                _worldInfoUI.OpenButtonActionPanel(OpenChest, NAME_BUTTON);
             }
         }
 
