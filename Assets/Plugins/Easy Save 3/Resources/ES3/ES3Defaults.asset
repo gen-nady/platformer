@@ -34,6 +34,7 @@ MonoBehaviour:
     - Assembly-CSharp-firstpass
     - Cinemachine
     - PsdPlugin
+    - ScriptablePacker
     - Zenject
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
