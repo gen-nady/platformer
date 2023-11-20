@@ -1,6 +1,5 @@
 using System;
 using Infastructure;
-using OtherItem;
 using Services.Input;
 using UnityEngine;
 
@@ -10,9 +9,8 @@ public class MainPlayerMovement : MonoBehaviour
     
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private LayerMask _groundLayer;
-    [SerializeField] private float _moveSpeed;
-    [SerializeField] private float _jumpForce;
-    [SerializeField] private float _gravityWithWall;
+    [SerializeField] private float _moveSpeed = 5f;
+    [SerializeField] private float _jumpForce = 10f;
 
     private bool _isLadder;
     
@@ -21,7 +19,6 @@ public class MainPlayerMovement : MonoBehaviour
     private IInputService _inputService;
     private const float GroundRadius = 0.2f;
     private bool _isIdle;
-    private bool _isWall;
     
     private readonly Vector3 _rightScale = new Vector3(5, 5, 1);
     private readonly Vector3 _leftScale = new Vector3(-5, 5, 1);
@@ -51,24 +48,7 @@ public class MainPlayerMovement : MonoBehaviour
             MovementLadder();
         }
     }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (collision.gameObject.TryGetComponent<Wall>(out var wall))
-        {
-            _isWall = true;
-            _rb.velocity = new Vector2(_rb.velocity.x, _gravityWithWall);
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.TryGetComponent<Wall>(out var wall))
-        {
-            _isWall = false;
-        }
-    }
-
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
@@ -79,6 +59,7 @@ public class MainPlayerMovement : MonoBehaviour
     private void Movement()
     {
         var moveVector = _inputService.HorizontalAxis;
+        Debug.Log(moveVector);
         _animator.SetFloat(_speed, Mathf.Abs(moveVector));
         _rb.velocity = new Vector2(moveVector * _moveSpeed, _rb.velocity.y);
         if (moveVector > 0)
@@ -101,7 +82,7 @@ public class MainPlayerMovement : MonoBehaviour
     
     public void Jump()
     {
-        if (isGrounded && !_isWall)
+        if (isGrounded)
         {
             _animator.ResetTrigger(_attack1);
             _animator.ResetTrigger(_attack2);

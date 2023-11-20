@@ -3,7 +3,7 @@ guid: bf314f42993ce284a9230593818af26f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -33,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -283,6 +286,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Pier_Tiles_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 85
+        width: 31
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 096afc90aa6a5ef4db0bafb66d90930b
+      internalID: -662144875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -294,17 +318,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pier_Tiles_2: -232538932
+      Pier_Tiles_0: -1235357076
       Pier_Tiles_1: -1004936210
+      Pier_Tiles_2: -232538932
+      Pier_Tiles_3: 1476252432
+      Pier_Tiles_4: -1517209500
+      Pier_Tiles_5: 117334096
       Pier_Tiles_6: 1755540774
       Pier_Tiles_7: -1014242312
-      Pier_Tiles_4: -1517209500
-      Pier_Tiles_0: -1235357076
-      Pier_Tiles_5: 117334096
-      Pier_Tiles_3: 1476252432
-  spritePackingTag: 
+      Pier_Tiles_8: -662144875
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
