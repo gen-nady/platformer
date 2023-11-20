@@ -57,6 +57,7 @@ namespace Infastructure
             }
             progress.allowSceneActivation = true;
             OnSceneChange?.Invoke();
+            ES3.Save("CurrentScene", SceneManager.GetActiveScene().buildIndex);
             _worldInfoUI.CloseButtonActionPanel();
             _worldInfoUI.CloseLoading();
         }
