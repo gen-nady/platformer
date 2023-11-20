@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,10 @@ namespace Hero
         [SerializeField] private Button _coolDownButton;
         [SerializeField] private Image _coolDownImage;
         [SerializeField] private TextMeshProUGUI _coolDownText;
+        [Header("HealthBar")]
+        [SerializeField] private List<Image> _healthBar;
+        [SerializeField] private Sprite _nonHealth;
+        [SerializeField] private Sprite _health;
         
         private float _coolDown;
         private float _currentCoolDown;
@@ -20,11 +25,13 @@ namespace Hero
         private void OnEnable()
         {
             MainPlayerMovement.OnLadderState += ChangeJoystick;
+            HealthMainPlayer.OnHealthChanged += ChangeHealth;
         }
 
         private void OnDisable()
         {
             MainPlayerMovement.OnLadderState -= ChangeJoystick;
+            HealthMainPlayer.OnHealthChanged -= ChangeHealth;
         }
 
         private void Update()
@@ -46,6 +53,14 @@ namespace Hero
             }
         }
 
+        private void ChangeHealth(int curHealth)
+        {
+            for (int i = 0; i < _healthBar.Count; i++)
+            {
+                _healthBar[i].sprite = curHealth  > i ? _health : _nonHealth;
+            } 
+        }
+        
         public void StartCooldDown(float coolDown)
         {
             _coolDown = coolDown;
