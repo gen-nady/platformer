@@ -17,6 +17,8 @@ namespace Hero
         [SerializeField] private List<Image> _healthBar;
         [SerializeField] private Sprite _nonHealth;
         [SerializeField] private Sprite _health;
+        [Header("Money")] 
+        [SerializeField] private TextMeshProUGUI _moneyText;
         
         private float _coolDown;
         private float _currentCoolDown;
@@ -26,12 +28,14 @@ namespace Hero
         {
             MainPlayerMovement.OnLadderState += ChangeJoystick;
             HealthMainPlayer.OnHealthChanged += ChangeHealth;
+            HeroData.OnAddMoney += ChangeMoney;
         }
 
         private void OnDisable()
         {
             MainPlayerMovement.OnLadderState -= ChangeJoystick;
             HealthMainPlayer.OnHealthChanged -= ChangeHealth;
+            HeroData.OnAddMoney -= ChangeMoney;
         }
 
         private void Update()
@@ -58,7 +62,12 @@ namespace Hero
             for (int i = 0; i < _healthBar.Count; i++)
             {
                 _healthBar[i].sprite = curHealth  > i ? _health : _nonHealth;
+                
             } 
+        }
+        private void ChangeMoney(int countMoney)
+        {
+            _moneyText.text = countMoney.ToString();
         }
         
         public void StartCooldDown(float coolDown)

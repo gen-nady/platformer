@@ -1,4 +1,5 @@
 ﻿using System;
+using Hero;
 using Infastructure;
 using Quest;
 using UnityEngine;
@@ -40,7 +41,7 @@ namespace SaveService
                 _currentScene = ES3.Load<int>("CurrentScene");
                 SceneManager.LoadScene(_currentScene);
             }
-            
+            HeroData.LoadProgress();
             _playerQuest.LoadProgressQuest();
         }
 
@@ -61,6 +62,7 @@ namespace SaveService
             ES3.Save("PlayerPosition", _mainPlayerMovement.transform.position);
             ES3.Save("CurrentScene", SceneManager.GetActiveScene().buildIndex);
             _playerQuest.SaveProgressQuest();
+            HeroData.SaveProgress();
         }
         
         private void OnApplicationQuit()

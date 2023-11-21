@@ -1,13 +1,20 @@
 ﻿using ObjectToQuest;
 using OtherItem;
 using UnityEngine;
+using WorldItem;
 
 namespace Hero
 {
-    public class PlayerQuestsTarget : MonoBehaviour
+    public class PlayerTarget : MonoBehaviour
     {
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (other.TryGetComponent<Coin>(out var coin))
+            {
+                coin.PickUp();
+                return;
+            }
+            
             if (other.TryGetComponent<PickUpItem>(out var pickUp))
             {
                 pickUp.PickUp();
