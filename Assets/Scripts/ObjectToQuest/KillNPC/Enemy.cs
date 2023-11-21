@@ -11,7 +11,7 @@ namespace ObjectToQuest
     {
         [SerializeField] protected string _idName;
         [SerializeField] private int _lifePoints;
-        [SerializeField] private float _attackHealth;
+        [SerializeField] private int _attackHealth;
         private PlayerQuest _playerQuest;
 
         [Inject]
@@ -54,6 +54,11 @@ namespace ObjectToQuest
                     gameObject.SetActive(false);
                     Debug.Log("УБИЛО!!");
                 }
+            }
+
+            if (col.TryGetComponent<HealthMainPlayer>(out var health))
+            {
+                health.TakeDamage(_attackHealth);
             }
         }
         #endregion        
