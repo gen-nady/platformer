@@ -6083,8 +6083,8 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  _moveSpeed: 8
-  _jumpForce: 15
+  _moveSpeed: 7
+  _jumpForce: 14
 --- !u!95 &8709252890781067796
 Animator:
   serializedVersion: 7
