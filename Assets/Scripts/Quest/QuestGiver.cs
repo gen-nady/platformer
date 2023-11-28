@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using NPC;
 using UnityEngine;
 using Zenject;
 
@@ -16,6 +17,7 @@ namespace Quest
         private bool _isAllQuest;
         private QuestGiverUI _questGiverUI;
         private PlayerQuest _playerQuest;
+        private SimpleNPC _simpleNpc;
 
         [Inject]
         private void Construct(QuestGiverUI questGiverUI, PlayerQuest playerQuest)
@@ -26,6 +28,7 @@ namespace Quest
         
         private void OnEnable()
         {
+            _simpleNpc = GetComponent<SimpleNPC>();
             if (_quests.Count > 0)
             {
                 for (int i = 0; i < _quests.Count; i++)
@@ -87,24 +90,29 @@ namespace Quest
                 _questGiverUI.CompletedQuest(_quests[0],GetBonusesForQuest);
             }
         }
+
+        public void QuestControled()
+        {
+            if (_isActiveQuest)
+            {
+                if (_playerQuest.IsQuestExist(_quests[0].Id) && _quests[0].IsCompleted)
+                {
+                    _questGiverUI.CompletedQuest(_quests[0],GetBonusesForQuest);
+                }
+            }
+            else if (_quests.Count > 0 && _playerQuest.IsCompletedQuest(_quests[0].PrevIdQuest))
+            {
+                (_quests[0] as TalkQuest)?.SetQuestGiver(this);
+                _questGiverUI.SetQuestText(_quests[0], AddQusetToPlayer);
+            }
+        }
         
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if(_isAllQuest) return;
+            if(_simpleNpc != default || _isAllQuest) return;
             if (other.GetComponent<MainPlayerMovement>())
             {
-                if (_isActiveQuest)
-                {
-                    if (_playerQuest.IsQuestExist(_quests[0].Id) && _quests[0].IsCompleted)
-                    {
-                        _questGiverUI.CompletedQuest(_quests[0],GetBonusesForQuest);
-                    }
-                }
-                else if (_quests.Count > 0 && _playerQuest.IsCompletedQuest(_quests[0].PrevIdQuest))
-                {
-                    (_quests[0] as TalkQuest)?.SetQuestGiver(this);
-                    _questGiverUI.SetQuestText(_quests[0], AddQusetToPlayer);
-                }
+                QuestControled();
             }
         }
 
