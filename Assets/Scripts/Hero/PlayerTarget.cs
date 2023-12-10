@@ -9,6 +9,11 @@ namespace Hero
     {
         private void OnTriggerEnter2D(Collider2D other)
         {
+            if (other.TryGetComponent<InvetoryPickUpItem>(out var invetory))
+            {
+                return;
+            }
+            
             if (other.TryGetComponent<Coin>(out var coin))
             {
                 coin.PickUp();

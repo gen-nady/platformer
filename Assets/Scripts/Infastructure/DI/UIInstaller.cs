@@ -1,4 +1,5 @@
 ﻿using Hero;
+using InventorySystem.UI;
 using OtherItem;
 using Quest;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace Infastructure
         [SerializeField] private WorldInfoUI _worldInfoUI;
         [SerializeField] private TalkQuestUI _talkQuestUI;
         [SerializeField] private MainPlayerUI _mainPlayerUI;
+        [SerializeField] private UIInventory _uiInventory;
         
         public override void InstallBindings()
         {
@@ -22,6 +24,7 @@ namespace Infastructure
             Container.Bind<WorldInfoUI>().FromInstance(_worldInfoUI).AsSingle();
             Container.Bind<TalkQuestUI>().FromInstance(_talkQuestUI).AsSingle();
             Container.Bind<MainPlayerUI>().FromInstance(_mainPlayerUI).AsSingle();
+            Container.Bind<UIInventory>().FromInstance(_uiInventory).AsSingle();
         }
     }
 }

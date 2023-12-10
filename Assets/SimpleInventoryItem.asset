@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e27db4d2cfd4139994dd0f055304be0, type: 3}
+  m_Name: SimpleInventoryItem
+  m_EditorClassIdentifier: 
+  _id: 1
+  _title: "\u0417\u0435\u043B\u044C\u0435"
+  _description: "\u041E\u0427 \u043A\u0440\u0443\u0442\u043E\u0435 \u0437\u0435\u043B\u044C\u0435"
+  _maxItemsInInventoruSlot: 12
+  _spriteIco: {fileID: -1607964472022901426, guid: 8b52c1f58fc71f64d93ab64209c153f5, type: 3}

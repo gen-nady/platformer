@@ -1,4 +1,6 @@
 ﻿using System;
+using InventorySystem;
+using InventorySystem.Objects;
 using Quest;
 using UnityEngine;
 using WorldItem;
@@ -9,7 +11,10 @@ namespace ObjectToQuest
     public abstract class PickUpItem : MonoBehaviour
     {
         [SerializeField] protected string _idName;
+        [SerializeField] protected InventoryItemInfo info;
+        public InventoryItem item { get; protected set; }
         protected PlayerQuest _playerQuest;
+        
         
         [Inject]
         private void Construct(PlayerQuest playerQuest)
