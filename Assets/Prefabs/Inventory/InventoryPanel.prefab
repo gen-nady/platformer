@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiInventoryItem: {fileID: 0}
-  _isTrash: 1
+  _typeItem: 0
 --- !u!1 &5467532187795353433
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8556255254862830645
 RectTransform:
   m_ObjectHideFlags: 0

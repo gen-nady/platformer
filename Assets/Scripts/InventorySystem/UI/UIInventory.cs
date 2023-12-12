@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Hero;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +12,8 @@ namespace InventorySystem.UI
         [SerializeField] private UIInventorySlot _uiInventorySlotPrefab;
         [SerializeField] private RectTransform _uiInventorySlotPosition;
         [SerializeField] private GridLayoutGroup _gridLayoutGroup;
+        [SerializeField] private TextMeshProUGUI _armoorCount;
+        [SerializeField] private TextMeshProUGUI _attackCount;
         private List<UIInventorySlot> _uiSlots = new List<UIInventorySlot>();
         public InventoryWithSlots _inventory { get; private set; }
 
@@ -24,11 +28,18 @@ namespace InventorySystem.UI
             _panelInventory.SetActive(true);
             IntantiateInventory();
             SetupInventoryUI();
+            SetStats();
         }
 
         public void CloseInventory()
         {
             _panelInventory.SetActive(false);
+        }
+
+        public void SetStats()
+        {
+            _armoorCount.text = HeroData.Armor.ToString();
+            _attackCount.text = HeroData.Attack.ToString();
         }
         
         private void SetupInventoryUI()

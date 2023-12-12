@@ -356,7 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiInventoryItem: {fileID: 2398585496454557701}
-  _isTrash: 0
+  _typeItem: 0
 --- !u!1 &5737202145908076984
 GameObject:
   m_ObjectHideFlags: 0

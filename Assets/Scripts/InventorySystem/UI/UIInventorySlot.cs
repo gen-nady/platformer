@@ -6,13 +6,15 @@ namespace InventorySystem.UI
     public class UIInventorySlot : UISlot
     {
         [SerializeField] private UIInventoryItem _uiInventoryItem;
-        [SerializeField] private bool _isTrash;
+        [SerializeField] private ItemType _typeItem;
         public InventorySlot slot { get; private set; }
         private UIInventory _uiInventory;
 
         private void OnEnable()
         {
             _uiInventory = GetComponentInParent<UIInventory>();
+            if (_typeItem != ItemType.None)
+                slot = new InventorySlot();
         }
 
         public void SetSlot(InventorySlot newSlot)
@@ -26,7 +28,8 @@ namespace InventorySystem.UI
             var otherSlotUI = otherItemUI.GetComponentInParent<UIInventorySlot>();
             var otherSlot = otherSlotUI.slot;
             var inventory = _uiInventory._inventory;
-            if (_isTrash)
+            if (_typeItem != ItemType.None && _typeItem != otherItemUI.item.info.Type ) return;
+            if (_typeItem is ItemType.Trash)
             {
                 inventory.Remove(this, otherSlot);
             }

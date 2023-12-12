@@ -10,6 +10,11 @@ namespace InventorySystem.Objects
         [SerializeField] private string _description;
         [SerializeField] private int _maxItemsInInventoruSlot;
         [SerializeField] private Sprite _spriteIco;
+        [SerializeField] private int _armor;
+        [SerializeField] private int _attack;
+        public ItemType Type;
+        public int Attack => _attack;
+        public int Armor => _armor;
         public string id => _id;
         public string title => _title;
         public string description => _description;

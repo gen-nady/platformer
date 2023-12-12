@@ -17,3 +17,6 @@ MonoBehaviour:
   _description: "\u041E\u0427 \u043A\u0440\u0443\u0442\u043E\u0435 \u0437\u0435\u043B\u044C\u0435"
   _maxItemsInInventoruSlot: 12
   _spriteIco: {fileID: -1607964472022901426, guid: 8b52c1f58fc71f64d93ab64209c153f5, type: 3}
+  _armor: 5
+  _attack: 10
+  Type: 3

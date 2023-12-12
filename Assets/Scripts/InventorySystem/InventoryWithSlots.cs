@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using InventorySystem.Objects;
 
 namespace InventorySystem
 {
@@ -9,6 +10,8 @@ namespace InventorySystem
         public event Action<object, InventoryItem, int> OnInventoryItemAddedEvent;
         public event Action<object, string, int> OnInventoryItemRemovedEvent;
         public event Action<object> OnInventoryStateChangedEvent;
+        public event Action<InventoryItemInfo> OnEquipmentAddedChanged;
+        public event Action<InventoryItemInfo> OnEquipmentRemovedChanged;
         public int capacity { get; set; }
         public bool isFull => _slots.All(_ => _.isFull);
 
@@ -101,7 +104,8 @@ namespace InventorySystem
             if(toSlot.isFull) return;
             
             if(!toSlot.isEmpty && fromSlot.item.info.id != toSlot.item.info.id) return;
-
+        
+            
             var slotcapacity = fromSlot.capacity;
             var fits = fromSlot.amount + toSlot.amount <= slotcapacity;
             var amountToAdd = fits ? fromSlot.amount : slotcapacity - toSlot.amount;
@@ -120,6 +124,14 @@ namespace InventorySystem
             else
                 fromSlot.item.state.amount = amountLeft;
             OnInventoryStateChangedEvent?.Invoke(sender);
+            if (toSlot.item.info.Type != ItemType.None && toSlot.item.info.Type != ItemType.Trash)
+            {
+                OnEquipmentAddedChanged?.Invoke(toSlot.item.info);
+            }
+            else if (fromSlot.item.info.Type != ItemType.None || toSlot.item.info.Type == ItemType.Trash)
+            {
+                OnEquipmentRemovedChanged?.Invoke(toSlot.item.info);
+            }
         }
         
         public void Remove(object sender, string id, int amount = 1)

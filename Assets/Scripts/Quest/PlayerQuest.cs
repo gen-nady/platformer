@@ -66,7 +66,7 @@ namespace Quest
         
         public void EnemyKilled(string idKill)
         {
-            var quest = _quests.OfType<KillQuest>().FirstOrDefault(_ => _.Id == idKill)!;
+            var quest = _quests.OfType<KillQuest>().FirstOrDefault(_ => _.Id == idKill);
             if(quest == default) return;
             quest.EnemyKilled(idKill);
             ChangeProgressQuest(quest);
@@ -74,7 +74,7 @@ namespace Quest
 
         public void ObjectFound(string idFind)
         {
-            var quest = _quests.OfType<SearchQuest>().FirstOrDefault(_ => _.Id == idFind)!;
+            var quest = _quests.OfType<SearchQuest>().FirstOrDefault(_ => _.Id == idFind);
             if(quest == default) return;
             quest.ObjectFound(idFind);
             ChangeProgressQuest(quest);
@@ -82,7 +82,7 @@ namespace Quest
 
         public void NpcTalked(string idTalk)
         {
-            var quest = _quests.OfType<TalkQuest>().FirstOrDefault(_ => _.Id == idTalk)!;
+            var quest = _quests.OfType<TalkQuest>().FirstOrDefault(_ => _.Id == idTalk);
             if (quest is null) return;
             quest.NpcTalked(idTalk);
             ChangeProgressQuest(quest);

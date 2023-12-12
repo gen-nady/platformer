@@ -1,4 +1,6 @@
 ﻿using System;
+using Hero;
+using InventorySystem.Objects;
 using InventorySystem.UI;
 using OtherItem;
 using UnityEngine;
@@ -26,6 +28,32 @@ namespace InventorySystem
             _uiInventory.SetInventory(_inventory);
         }
 
+        private void OnEnable()
+        {
+            _inventory.OnEquipmentAddedChanged += AddEquipment;
+            _inventory.OnEquipmentRemovedChanged += RemoveEquipment;
+        }
+
+        private void OnDisable()
+        {
+            _inventory.OnEquipmentAddedChanged -= AddEquipment;
+            _inventory.OnEquipmentRemovedChanged -= RemoveEquipment;
+        }
+
+        private void RemoveEquipment(InventoryItemInfo item)
+        {
+            HeroData.Armor -= item.Armor;
+            HeroData.Attack -= item.Attack;
+            _uiInventory.SetStats();
+        }
+
+        private void AddEquipment(InventoryItemInfo item)
+        {
+            HeroData.Armor += item.Armor;
+            HeroData.Attack += item.Attack;
+            _uiInventory.SetStats();
+        }
+        
         private void OnTriggerEnter2D(Collider2D col)
         {
             if (col.TryGetComponent<ObjectToQuest.PickUpItem>(out var pickUp))

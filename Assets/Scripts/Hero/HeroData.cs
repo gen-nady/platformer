@@ -7,6 +7,8 @@ namespace Hero
         public static event Action<int> OnAddMoney; 
         public static int Money;
         public static int XP;
+        public static int Armor;
+        public static int Attack;
 
         public static void AddMoney(int count)
         {
