@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LVL_Waterfall.unity
     guid: 9618da3c0d422224aa59476cd0357673
+  - enabled: 1
+    path: Assets/Scenes/FisherRoom.unity
+    guid: 9ec90a7b69440a94491ad5ffe3f6d070
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
