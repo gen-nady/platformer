@@ -11,6 +11,9 @@ namespace OtherItem
         [Header("Table Info")]
         [SerializeField] private GameObject _tableInfoPanel;
         [SerializeField] private TextMeshProUGUI _tableInfoText;
+        [Header("Big table Info")]
+        [SerializeField] private GameObject _bigTableInfoPanel;
+        [SerializeField] private TextMeshProUGUI _bigTableInfoText;
         [Header("Loading Panel")]
         [SerializeField] private GameObject _loadingPanel;
         [Header("Other Item")]
@@ -32,10 +35,20 @@ namespace OtherItem
             _tableInfoPanel.SetActive(true);
             _tableInfoText.text = text;
         }
+        public void ShowBigTableInfoPanel(string text)
+        {
+            _bigTableInfoPanel.SetActive(true);
+            _bigTableInfoText.text = text;
+        }
         
         public void CloseTableInfoPanel()
         {
             _tableInfoPanel.SetActive(false);
+        }
+        
+        public void CloseBigTableInfoPanel()
+        {
+            _bigTableInfoPanel.SetActive(false);
         }
         
         public void OpenLoading()

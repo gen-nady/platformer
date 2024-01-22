@@ -38,6 +38,12 @@ namespace Hero
                 return;
             }
             
+            if (other.TryGetComponent<BigInfo>(out var bigTable))
+            {
+                bigTable.ShowText();
+                return;
+            }
+            
             if (other.TryGetComponent<ObjectToQuest.Enemy>(out var enemy))
             {
                 enemy.TakeDamage();
@@ -50,6 +56,11 @@ namespace Hero
             if (other.TryGetComponent<TableInfo>(out var table))
             {
                 table.CloseText();
+                return;
+            }
+            if (other.TryGetComponent<BigInfo>(out var bigTable))
+            {
+                bigTable.CloseText();
                 return;
             }
         }
